@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GroundItemCD : ItemCollisionDetector
 {
+
+                // Debug.Log(coords.i);
     void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.tag == "Tile") { // jeśli jest równe zero nie można stwiać, bo wyszedł z zasięgu wszystkich

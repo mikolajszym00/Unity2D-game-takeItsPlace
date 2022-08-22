@@ -9,6 +9,7 @@ public class ItemSO : ScriptableObject
 
     [SerializeField] GameObject prefabFeatures;
     [SerializeField] GameObject setPointerTemplate;
+    [SerializeField] GameObject manager;
 
     [SerializeField] Sprite mySprite;
     [SerializeField] int godPrice;
@@ -50,5 +51,10 @@ public class ItemSO : ScriptableObject
     public float GetObjectBoundariesRadius()
     {
         return objectBoundariesRadius;
+    }
+
+    public GameObject GetManager()
+    {
+        return manager;
     }
 }

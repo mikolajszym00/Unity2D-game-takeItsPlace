@@ -7,7 +7,8 @@ TagManager:
   - Hand
   - Boundary
   - Water
-  - Tile
+  - CoveredTile
+  - BaredTile
   layers:
   - Default
   - TransparentFX

@@ -183,7 +183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2165827995352702852
 Transform:
   m_ObjectHideFlags: 0
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 6494900098922661764}
   m_Layer: 0
   m_Name: Tile
-  m_TagString: Tile
+  m_TagString: BaredTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -449,7 +449,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.16037738, g: 0.14146496, b: 0.14146496, a: 0.7019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.99215686}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -473,7 +473,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 6829480378522568239}
   isCovered: 0
-  gridManagerObj: {fileID: 106239307040403319, guid: f2878d996e0be6342926c964c5e26810, type: 3}
 --- !u!61 &6494900098922661764
 BoxCollider2D:
   m_ObjectHideFlags: 0

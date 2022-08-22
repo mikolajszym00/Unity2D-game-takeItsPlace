@@ -28,7 +28,7 @@ public class ItemSetter : MonoBehaviour // ma być ElementSetter, rozdzielić it
     {
         if (setPointer) 
         { 
-            // MoveSetPointer();
+            MoveSetPointer();
             // itemDetector.ChangeSprite(); 
         }
     }
@@ -38,51 +38,75 @@ public class ItemSetter : MonoBehaviour // ma być ElementSetter, rozdzielić it
         setPointer.GetComponent<CircleCollider2D>().radius = myItem.GetObjectBoundariesRadius();
     }
 
-    public void CreateSetPointer(ItemSO item) 
+    public void CreateSetPointer(ItemSO elem) // tu się bedzie rozchodziło na item i tile
     {
         GetComponent<PlayerInput>().ActivateInput();
 
-        myItem = item;
+        if (elem.IsGround()) // zostanie zmienione na tile
+        {
+            gridManager.GetComponent<GridManager>().ActivateBare(); // elem nie bedzie posiadał managera
+            gridManager.SetSprite(elem.GetSprite());
 
-        setPointer = Instantiate(myItem.GetSetPointerTemplate(), GetMousePos(), Quaternion.identity, transform);
-        rb = setPointer.GetComponent<Rigidbody2D>();
+            myItem = elem;
+        }
+        else
+        {
 
-        if (!myItem.IsGround()) { SetRadius(); } 
 
-        itemDetector = setPointer.GetComponent<ItemCollisionDetector>();
-        itemDetector.SetSprite(myItem.GetSprite());
+
+
+            myItem = elem;
+
+            setPointer = Instantiate(myItem.GetSetPointerTemplate(), GetMousePos(), Quaternion.identity, transform);
+            rb = setPointer.GetComponent<Rigidbody2D>();
+
+            if (!myItem.IsGround()) { SetRadius(); } 
+
+            itemDetector = setPointer.GetComponent<ItemCollisionDetector>();
+            itemDetector.SetSprite(myItem.GetSprite());
+
+
+        }
    }
 
     void MoveSetPointer()
     {
         position = Vector2.Lerp(setPointer.transform.position, GetMousePos(), moveSpeed);
-
         rb.MovePosition(position);
     } 
 
     public Vector3 GetMousePos()
     {
         Vector3 mousePos3 = Input.mousePosition;
+
         mousePos3 = Camera.main.ScreenToWorldPoint(mousePos3);
+        // Debug.Log(mousePos3);
+
         return new Vector3(mousePos3.x, mousePos3.y, 0); // mysz jest tam gdzie kamera czyli na -1
     }
 
     void OnSet()
     {
-        if (!itemDetector.CanBePlaced()) { return; }
-
-        Destroy(setPointer); // czy można więcej na raz kłaść (problem moze byc z trigger enter)
-        GetComponent<PlayerInput>().DeactivateInput(); // czy można więcej na raz kłaść
-
         if (myItem.IsGround())
         {
-            gridManager.CoverTile(myItem.GetSprite());
+            if (gridManager.MouseClickHandler(GetMousePos())) {
+                GetComponent<PlayerInput>().DeactivateInput(); // czy można więcej na raz kłaść
+            }
+            
         }
         else 
         {
+            if (!itemDetector.CanBePlaced()) { return; }
+
+            Destroy(setPointer); // czy można więcej na raz kłaść (problem moze byc z trigger enter)
+
             Transform parent = transform.Find("Item Container").transform;
             Instantiate(myItem.GetPrefabFeatures(), GetMousePos(), Quaternion.identity, parent);
+
+            GetComponent<PlayerInput>().DeactivateInput(); // czy można więcej na raz kłaść
         }
+
+        
 
     }
 

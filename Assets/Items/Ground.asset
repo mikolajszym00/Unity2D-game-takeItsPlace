@@ -15,6 +15,7 @@ MonoBehaviour:
   isGround: 1
   prefabFeatures: {fileID: 2909247356872944428, guid: 62a01f974ddb6d44a9400c5871953762, type: 3}
   setPointerTemplate: {fileID: 1710000588421800688, guid: 6688c1dddfb4d9b419922d6d7098dad9, type: 3}
+  manager: {fileID: 106239307040403319, guid: f2878d996e0be6342926c964c5e26810, type: 3}
   mySprite: {fileID: 21300000, guid: 05715d2f0cbe10f43b691885356bddad, type: 3}
   godPrice: 12
   humanPrice: 12
