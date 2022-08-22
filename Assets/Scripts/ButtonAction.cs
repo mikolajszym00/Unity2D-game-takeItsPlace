@@ -8,12 +8,14 @@ public class ButtonAction : MonoBehaviour
     [SerializeField] ButtonItem[] buttons;
     ItemSO choseItem = null;
 
-    [SerializeField] GameObject ItemContainer;
+    [SerializeField] GameObject ItemOrganizer;
 
     public void OnButtonSelected (int index) 
     {
         // jeśli cię stać czyli jeśli kolor jest zielony
         choseItem = buttons[index].GetMyItem();
-        ItemContainer.GetComponent<ItemHolder>().CreateHoldingItem(choseItem);
+        ItemOrganizer.GetComponent<ItemSetter>().CreateSetPointer(choseItem);
+
+                // Button.interactable = false; // trzeba wyłączyć guziki
     }
 }

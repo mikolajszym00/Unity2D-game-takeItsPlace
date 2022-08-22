@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c3fccb95b14744c878389faabb3e51, type: 3}
+  m_Name: Chest
+  m_EditorClassIdentifier: 
+  isGround: 0
+  prefabFeatures: {fileID: 315258945576123649, guid: 246181e83f0c259479cdc3d943295f85, type: 3}
+  setPointerTemplate: {fileID: 1710000588421800688, guid: 11d64af538bf80941bf728f350088026, type: 3}
+  mySprite: {fileID: -1738841945, guid: 59bee9d3af58e5c4b8e952edae42c26c, type: 3}
+  godPrice: 2
+  humanPrice: 4
+  objectBoundariesRadius: 0.5
