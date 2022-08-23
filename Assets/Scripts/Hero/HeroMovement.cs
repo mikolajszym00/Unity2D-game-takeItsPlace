@@ -9,6 +9,8 @@ public class HeroMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] Vector2 movementDirection;
 
+    [SerializeField] Rigidbody2D rb;
+
     void Start()
     {
 
@@ -26,8 +28,19 @@ public class HeroMovement : MonoBehaviour
 
     void Move() 
     {
+        // rb.velocity = moveSpeed * movementDirection;
         Vector3 delta = moveSpeed * movementDirection * Time.deltaTime;
         transform.position += delta;
+    }
+
+    public Vector2 GetMovementDirection()
+    {
+        return movementDirection;
+    }
+
+    public float GetMoveSpeed()
+    {
+        return moveSpeed;
     }
 
 }

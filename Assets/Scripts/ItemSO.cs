@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Item", menuName = "ItemSO")]
 public class ItemSO : ScriptableObject 
 {
-    [SerializeField] bool isGround;
+    [SerializeField] bool isItem;
 
     [SerializeField] GameObject prefabFeatures;
     [SerializeField] GameObject setPointerTemplate;
@@ -17,9 +17,9 @@ public class ItemSO : ScriptableObject
 
     [SerializeField] float objectBoundariesRadius;
 
-    public bool IsGround()
+    public bool IsItem()
     {
-        return isGround;
+        return isItem;
     }
     
     public Sprite GetSprite()

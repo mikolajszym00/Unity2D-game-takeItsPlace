@@ -15,18 +15,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Destroy",
+                    "name": "Delete",
                     "type": "Button",
                     "id": "80c01c00-49d1-486f-a75a-89548e51e7e6",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "A1",
-                    "type": "Button",
-                    "id": "7bcb2691-7c11-4307-8734-173816892703",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -52,18 +43,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Destroy",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "57f59c59-3786-4e64-a350-37e43b9db733",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "A1",
+                    "action": "Delete",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RegularItemCD : ItemCollisionDetector
+public class SetPointerCD : MonoBehaviour
 {
+    int counter = 0;
+
     void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.tag == "Boundary") {
@@ -18,8 +20,13 @@ public class RegularItemCD : ItemCollisionDetector
         }
     }
 
-    public override bool CanBePlaced()
+    public bool CanBePlaced() 
     {
-        return counter == 0 ? true : false;
+        return counter == 0 ? true: false;
+    }
+
+    public void ResetCounter()
+    {
+        counter = 0;
     }
 }

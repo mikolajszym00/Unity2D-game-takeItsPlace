@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5067524295061429479}
   - component: {fileID: 3016047325293439874}
   - component: {fileID: 3775445993885222005}
-  - component: {fileID: 5562794849762969687}
+  - component: {fileID: -1007645680406266444}
   m_Layer: 0
   m_Name: SetPointer
   m_TagString: Untagged
@@ -124,7 +124,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.0001
---- !u!114 &5562794849762969687
+--- !u!114 &-1007645680406266444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,8 +133,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1710000588421800688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 376a6877be0ba794c8e72bbfef70663c, type: 3}
+  m_Script: {fileID: 11500000, guid: 12de4be79d81eb147922a0c8789becad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  denySprite: {fileID: -610025858, guid: 59bee9d3af58e5c4b8e952edae42c26c, type: 3}
-  gridManagerObj: {fileID: 106239307040403319, guid: f2878d996e0be6342926c964c5e26810, type: 3}

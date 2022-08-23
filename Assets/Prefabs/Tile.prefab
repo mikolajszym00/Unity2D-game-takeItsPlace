@@ -446,7 +446,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1271490143
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.99215686}
@@ -471,8 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa0e158b3905694088c124ba7a87521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlight: {fileID: 6829480378522568239}
-  isCovered: 0
+  bc: {fileID: 6494900098922661764}
 --- !u!61 &6494900098922661764
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -480,10 +479,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7763934667690456128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

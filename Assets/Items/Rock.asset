@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c3fccb95b14744c878389faabb3e51, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  isGround: 0
+  isItem: 1
   prefabFeatures: {fileID: 315258945576123649, guid: 246181e83f0c259479cdc3d943295f85, type: 3}
   setPointerTemplate: {fileID: 1710000588421800688, guid: 11d64af538bf80941bf728f350088026, type: 3}
+  manager: {fileID: 0}
   mySprite: {fileID: -1845887087, guid: 59bee9d3af58e5c4b8e952edae42c26c, type: 3}
   godPrice: 6
   humanPrice: 22

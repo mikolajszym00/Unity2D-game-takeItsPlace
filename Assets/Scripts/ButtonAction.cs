@@ -12,10 +12,10 @@ public class ButtonAction : MonoBehaviour
 
     public void OnButtonSelected (int index) 
     {
+        gameObject.SetActive(false);
+
         // jeśli cię stać czyli jeśli kolor jest zielony
         choseItem = buttons[index].GetMyItem();
-        ItemOrganizer.GetComponent<ItemSetter>().CreateSetPointer(choseItem);
-
-                // Button.interactable = false; // trzeba wyłączyć guziki
+        ItemOrganizer.GetComponent<ElementSetter>().RunSetter(choseItem);
     }
 }

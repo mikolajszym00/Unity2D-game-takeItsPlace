@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridManager : MonoBehaviour
+public class GridManager : ElementManager
 {
     [SerializeField] Tile tilePrefab;
     [SerializeField] Sprite mySprite;
@@ -13,22 +13,12 @@ public class GridManager : MonoBehaviour
     Transform coveredParent;
     Transform baredParent;
 
-    Tile tileWithMouse;
-
-    GameObject tileCD;
-
     void Start() 
     {
         coveredParent = transform.Find("Covered");
         baredParent = transform.Find("Bared");
 
-        tileCD = transform.Find("TileCD").gameObject;
         CreateStartingTile();
-    }
-
-    void Update()
-    {
-
     }
 
     void CreateStartingTile()
@@ -42,8 +32,19 @@ public class GridManager : MonoBehaviour
         tile.SetCovered(mySprite, false);
 
         CreateBareTiles(x, y);
+
+        baredParent.gameObject.SetActive(false);
     }
 
+    public override void prepare(ItemSO elem)
+    {
+        ActivateBare();
+    }
+
+    public override void clean()
+    {
+        DeactivateBare();
+    }
 
     public bool IterateTilesContainer((int i, int j) coord, Transform parent)
     {
@@ -71,16 +72,15 @@ public class GridManager : MonoBehaviour
 
             if (!isCovered) 
             {
-                Instantiate(tilePrefab, new Vector3 (coord.i, coord.j), Quaternion.identity, baredParent.transform);
+                Tile tile = Instantiate(tilePrefab, new Vector3 (coord.i, coord.j), Quaternion.identity, baredParent.transform);
+                tile.ActivateBoxCollider();
             }
 
             isCovered = false;
         }
-
-        baredParent.gameObject.SetActive(false);
     }
 
-    public bool MouseClickHandler(Vector3 mousePos)
+    public override bool MouseClickHandler(Vector3 mousePos)
     {
         (int x, int y) mouse = Floor(mousePos + new Vector3(0.5f, 0.5f, 0f)); 
 
@@ -92,8 +92,26 @@ public class GridManager : MonoBehaviour
             {
                 tile.gameObject.GetComponent<Tile>().SetCovered(mySprite, true);
                 CreateBareTiles(pos.x, pos.y);
-                DeactivateBare();
 
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public bool IsPositionOnCoveredTiles(Vector3 myPos) // mozna przyspieszyc szukanie jesli 
+    // zrobi sie chunki i na podstawie nazywy i koordynat bedzie mozna swierdzic w ktorym trzeba szukać
+    // np chunki 10x10
+    {
+        (int x, int y) floorPos = Floor(myPos + new Vector3(0.5f, 0.5f, 0f)); 
+
+        foreach(Transform tile in coveredParent)
+        {
+            (int x, int y) pos = Floor(tile.position);
+
+            if (pos.x == floorPos.x && pos.y == floorPos.y)
+            {
                 return true;
             }
         }
@@ -106,7 +124,7 @@ public class GridManager : MonoBehaviour
         return (Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y));
     }
 
-    public void SetSprite(Sprite newSprite)
+    public override void SetSprite(Sprite newSprite)
     {
         mySprite = newSprite;
     }
@@ -118,52 +136,16 @@ public class GridManager : MonoBehaviour
 
     public void ActivateBare() 
     {
-        transform.Find("Bared").gameObject.SetActive(true);
+        baredParent.gameObject.SetActive(true);
     }
 
     public void DeactivateBare() 
     {
-        transform.Find("Bared").gameObject.SetActive(false);
+        // baredParent.gameObject.SetActive(false);
     }
 
     public Transform GetCoveredParent()
     {
         return coveredParent;
-    }
-
-    
-
-
-
-    // void GenerateGrid()
-    // {
-    //     Vector2 heroPos = hero.transform.position;
-
-    //     int x = Mathf.FloorToInt(heroPos.x);
-    //     int y = Mathf.FloorToInt(heroPos.y);
-
-    //     for (int i = x - halfWidth; i < x + halfWidth; i++) {
-    //         for (int j = y - halfHeight; j < y + halfHeight; j++) {
-    //             Transform parent = transform.Find("Bared").transform;
-    //             Instantiate(tilePrefab, new Vector3 (i, j), Quaternion.identity, parent);
-    //         }
-    //     }
-    // }
-
-    public void SetTileWithMouse(Tile tile)
-    {
-        tileWithMouse = tile;
-    }
-
-    public bool IsMouseOverTiles() {
-        return tileWithMouse.IsCovered();
-    }
-
-    public void CoverTile(Sprite newSprite) 
-    {
-        tileWithMouse.GetComponent<SpriteRenderer>().sprite = newSprite;
-
-        Transform parent = transform.Find("Covered").transform;
-        tileWithMouse.GetComponent<Transform>().SetParent(parent);
     }
 }
