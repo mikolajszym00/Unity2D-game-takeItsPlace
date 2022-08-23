@@ -9,6 +9,7 @@ TagManager:
   - Water
   - CoveredTile
   - BaredTile
+  - Item
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     [SerializeField] BoxCollider2D bc;
+    [SerializeField] SpriteRenderer sr;
     
     GameObject gridManagerObj;
     GridManager gridManager;
@@ -20,18 +21,28 @@ public class Tile : MonoBehaviour
     {
         transform.gameObject.tag = "CoveredTile";
         GetComponent<SpriteRenderer>().sprite = mySprite;
-        DeactivateBoxCollider();
+        DeactivateCollision();
 
         if (setParent) { transform.SetParent(gridManager.GetCoveredParent()); }
     }
 
-    public void ActivateBoxCollider() 
+    public void ActivateCollision() 
     {
         bc.enabled = true;
     }
 
-    public void DeactivateBoxCollider() 
+    public void DeactivateCollision() 
     {
         bc.enabled = false;
+    }
+
+    public void ActivateHighlight()
+    {
+        sr.enabled = true;
+    }
+
+    public void DeactivateHighlight()
+    {
+        sr.enabled = false;
     }
 }

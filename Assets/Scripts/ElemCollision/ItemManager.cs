@@ -73,7 +73,7 @@ public class ItemManager : ElementManager
         setPointer.GetComponent<SetPointerCD>().ResetCounter();
 
         Transform parent = transform.Find("Item Container").transform;
-        Instantiate(myElem.GetPrefabFeatures(), GetMousePos(), Quaternion.identity, parent);
+        Instantiate(myElem.GetPrefabObj(), GetMousePos(), Quaternion.identity, parent);
 
         return true;
     }

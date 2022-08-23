@@ -39,7 +39,7 @@ public class ObjectAct : MonoBehaviour
 
     void Act() 
     {
-        if (heroCollision && hand.GetComponent<HandAction>().GetActKeyIsPushed() == 1)
+        if (heroCollision && hand.GetComponent<HandAction>().IsUsingHand())
         {
             durability -= Time.deltaTime; // można mnożyć w celu zmniejszenia
         }

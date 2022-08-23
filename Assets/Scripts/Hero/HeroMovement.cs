@@ -10,6 +10,9 @@ public class HeroMovement : MonoBehaviour
     [SerializeField] Vector2 movementDirection;
 
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Animator anim;
+
+    bool heroHasHorizontalSpeed;
 
     void Start()
     {
@@ -18,7 +21,9 @@ public class HeroMovement : MonoBehaviour
 
     void Update()
     {
+        heroHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         Move();
+        FilpSprite();
     }
 
     void OnMove(InputValue value)
@@ -28,9 +33,25 @@ public class HeroMovement : MonoBehaviour
 
     void Move() 
     {
-        // rb.velocity = moveSpeed * movementDirection;
-        Vector3 delta = moveSpeed * movementDirection * Time.deltaTime;
-        transform.position += delta;
+        rb.velocity = moveSpeed * movementDirection;
+
+        bool heroHasVerticalSpeed = Mathf.Abs(rb.velocity.y) > Mathf.Epsilon;
+        anim.SetBool("isRunning", heroHasHorizontalSpeed || heroHasVerticalSpeed);
+
+        if (heroHasVerticalSpeed || heroHasHorizontalSpeed)
+        {
+            anim.SetBool("isUsingHand", false); 
+        }
+        
+    }
+
+    void FilpSprite()
+    {
+        heroHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        if (heroHasHorizontalSpeed) 
+        {
+            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f);
+        }
     }
 
     public Vector2 GetMovementDirection()

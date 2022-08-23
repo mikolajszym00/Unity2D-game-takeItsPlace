@@ -8,14 +8,14 @@ public class SetPointerCD : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.tag == "Boundary") {
+        if (other.tag == "Boundary" || other.tag == "BaredTile") {
             counter += 1;
         }
     }
 
     void OnTriggerExit2D(Collider2D other) 
     {
-        if (other.tag == "Boundary") {
+        if (other.tag == "Boundary" || other.tag == "BaredTile") {
             counter -= 1;
         }
     }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48154594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.23, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -77,9 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b88a76157be75c4b9823dab265bfbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  func: {fileID: 0}
   tilePrefab: {fileID: 6107845442882296263, guid: 863600cf544ebba4da8f7cc54d7fd6f9, type: 3}
-  mySprite: {fileID: 0}
+  mySprite: {fileID: 21300000, guid: e4bc5c4d986130b4e8aaf1b565848c19, type: 3}
   hero: {fileID: 0}
 --- !u!1 &271670106888718809
 GameObject:

@@ -5,12 +5,13 @@ using UnityEngine.InputSystem;
 
 public class HandAction : MonoBehaviour
 {
+    Animator anim;
 
     float actKeyIsPushed;
 
     void Start()
     {
-        
+        anim = transform.parent.GetComponent<Animator>();
     }
 
     void Update()
@@ -21,10 +22,12 @@ public class HandAction : MonoBehaviour
     void OnAction(InputValue value)
     {
         actKeyIsPushed = value.Get<float>();
+
+        anim.SetBool("isUsingHand", actKeyIsPushed == 1 ? true: false);
     }
 
-    public float GetActKeyIsPushed() 
+    public bool IsUsingHand() 
     {
-        return actKeyIsPushed;
+        return anim.GetBool("isUsingHand");
     }
 }

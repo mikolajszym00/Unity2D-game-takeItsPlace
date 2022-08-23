@@ -32,18 +32,35 @@ public class GridManager : ElementManager
         tile.SetCovered(mySprite, false);
 
         CreateBareTiles(x, y);
+        BaredTileDeactivateHighlight();
+    }
 
-        baredParent.gameObject.SetActive(false);
+    void BaredTileDeactivateHighlight()
+    {
+        foreach(Transform child in baredParent)
+        {
+            if (child.tag == "BaredTile")
+            {
+                child.gameObject.GetComponent<Tile>().DeactivateHighlight();
+            }
+        }
     }
 
     public override void prepare(ItemSO elem)
     {
-        ActivateBare();
+        foreach(Transform child in baredParent)
+        {
+            if (child.tag == "BaredTile")
+            {
+                child.gameObject.GetComponent<Tile>().ActivateHighlight();
+            }
+        }
+
     }
 
     public override void clean()
     {
-        DeactivateBare();
+        BaredTileDeactivateHighlight();
     }
 
     public bool IterateTilesContainer((int i, int j) coord, Transform parent)
@@ -73,7 +90,7 @@ public class GridManager : ElementManager
             if (!isCovered) 
             {
                 Tile tile = Instantiate(tilePrefab, new Vector3 (coord.i, coord.j), Quaternion.identity, baredParent.transform);
-                tile.ActivateBoxCollider();
+                tile.ActivateCollision();
             }
 
             isCovered = false;
@@ -132,16 +149,6 @@ public class GridManager : ElementManager
     public Sprite GetSprite()
     {
         return mySprite;
-    }
-
-    public void ActivateBare() 
-    {
-        baredParent.gameObject.SetActive(true);
-    }
-
-    public void DeactivateBare() 
-    {
-        // baredParent.gameObject.SetActive(false);
     }
 
     public Transform GetCoveredParent()
