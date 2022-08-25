@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c3fccb95b14744c878389faabb3e51, type: 3}
   m_Name: Chest
   m_EditorClassIdentifier: 
-  isItem: 1
-  prefabFeatures: {fileID: 315258945576123649, guid: 246181e83f0c259479cdc3d943295f85, type: 3}
-  setPointerTemplate: {fileID: 1710000588421800688, guid: 11d64af538bf80941bf728f350088026, type: 3}
-  manager: {fileID: 0}
-  mySprite: {fileID: -1738841945, guid: 59bee9d3af58e5c4b8e952edae42c26c, type: 3}
   godPrice: 2
   humanPrice: 4
+  mySprite: {fileID: -1261048822, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
+  prefabObj: {fileID: 0}
+  isItem: 1
   objectBoundariesRadius: 0.5

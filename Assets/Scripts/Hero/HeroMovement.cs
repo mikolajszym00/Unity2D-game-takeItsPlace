@@ -12,37 +12,38 @@ public class HeroMovement : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator anim;
 
+    [SerializeField] float energyCost = 0.003f;
+    [SerializeField] float atackEnergyCost = 10f;
+
+    [SerializeField] GameObject slider;
+    SliderControler energy;
+
     bool heroHasHorizontalSpeed;
+    bool heroHasVerticalSpeed;
 
     void Start()
     {
-
+        energy = slider.GetComponent<EnergySliderController>();
     }
 
     void Update()
     {
-        heroHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         Move();
         FilpSprite();
+        AnimationHandler();
+        AtackEnergyCost();
     }
 
     void OnMove(InputValue value)
     {
         movementDirection = value.Get<Vector2>();
+
+        RunningEnergyCost();
     }
 
     void Move() 
     {
         rb.velocity = moveSpeed * movementDirection;
-
-        bool heroHasVerticalSpeed = Mathf.Abs(rb.velocity.y) > Mathf.Epsilon;
-        anim.SetBool("isRunning", heroHasHorizontalSpeed || heroHasVerticalSpeed);
-
-        if (heroHasVerticalSpeed || heroHasHorizontalSpeed)
-        {
-            anim.SetBool("isUsingHand", false); 
-        }
-        
     }
 
     void FilpSprite()
@@ -52,6 +53,28 @@ public class HeroMovement : MonoBehaviour
         {
             transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f);
         }
+    }
+
+    void AnimationHandler()
+    {
+        heroHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        heroHasVerticalSpeed = Mathf.Abs(rb.velocity.y) > Mathf.Epsilon;
+
+        bool isRunning = (heroHasHorizontalSpeed || heroHasVerticalSpeed) && (!anim.GetBool("isAtacking"));
+        anim.SetBool("isRunning", isRunning);
+    }
+
+    void AtackEnergyCost()
+    {
+        if (anim.GetBool("isAtacking"))
+        {
+            energy.DecreaseValue(energyCost * atackEnergyCost);
+        }
+    }
+
+    void RunningEnergyCost() // bieganie i atak równoczeniśnie mogą zabierać więcej energii (**)
+    {
+        energy.DecreaseValue(energyCost);
     }
 
     public Vector2 GetMovementDirection()

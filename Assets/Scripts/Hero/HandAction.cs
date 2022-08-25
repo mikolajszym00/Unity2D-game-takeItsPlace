@@ -23,11 +23,12 @@ public class HandAction : MonoBehaviour
     {
         actKeyIsPushed = value.Get<float>();
 
-        anim.SetBool("isUsingHand", actKeyIsPushed == 1 ? true: false);
+        Debug.Log(actKeyIsPushed);
+        anim.SetBool("isAtacking", actKeyIsPushed == 1 ? true: false);
     }
 
-    public bool IsUsingHand() 
+    public bool IsAtacking() 
     {
-        return anim.GetBool("isUsingHand");
+        return anim.GetBool("isAtacking");
     }
 }

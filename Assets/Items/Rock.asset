@@ -15,6 +15,6 @@ MonoBehaviour:
   godPrice: 6
   humanPrice: 22
   mySprite: {fileID: -1817324446, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
-  prefabObj: {fileID: 0}
+  prefabObj: {fileID: 315258945576123649, guid: bbd206e46ff42f943a81971a47a3fa9a, type: 3}
   isItem: 1
   objectBoundariesRadius: 1

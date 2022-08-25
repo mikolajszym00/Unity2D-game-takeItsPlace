@@ -50,12 +50,12 @@ TagManager:
   - name: Tile
     uniqueID: 1271490143
     locked: 0
+  - name: Heros
+    uniqueID: 3095005065
+    locked: 0
   - name: Vegetation
     uniqueID: 2881570109
     locked: 0
   - name: SetPointer
     uniqueID: 3011370065
-    locked: 0
-  - name: Heros
-    uniqueID: 3095005065
     locked: 0
