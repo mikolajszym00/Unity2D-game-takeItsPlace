@@ -23,7 +23,6 @@ public class HandAction : MonoBehaviour
     {
         actKeyIsPushed = value.Get<float>();
 
-        Debug.Log(actKeyIsPushed);
         anim.SetBool("isAtacking", actKeyIsPushed == 1 ? true: false);
     }
 

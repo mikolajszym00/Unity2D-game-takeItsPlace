@@ -7,7 +7,8 @@ public class ItemAct : MonoBehaviour
     [SerializeField] float initDurability = 5f;
     [SerializeField] float durability;
 
-    [SerializeField] int loot; // mozna dodac randomozowanie
+    [SerializeField] int loot = 2; // mozna dodac randomozowanie
+    [SerializeField] Sprite drop;
 
     [SerializeField] GameObject hand;
     [SerializeField] bool heroCollision = false;
@@ -63,7 +64,9 @@ public class ItemAct : MonoBehaviour
 
         if (durability <= 0) {
             Destroy(gameObject);
-            inventory.AddToInventory(mySpriteRenderer.sprite, loot);
+            inventory.AddToInventory(drop, loot);
+            inventory.AddToInventory(drop, loot);
+            inventory.AddToInventory(drop, -1);
         }
     }
 }

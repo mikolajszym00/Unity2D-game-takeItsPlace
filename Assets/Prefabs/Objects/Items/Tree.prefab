@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3862739156433520239}
   - component: {fileID: 7559976781194266641}
   m_Layer: 0
-  m_Name: Stone
+  m_Name: Tree
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -1413397187
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1817324446, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
+  m_Sprite: {fileID: -187423546, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,8 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad95307d65388b243a14576118ab6b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initDurability: 2
+  initDurability: 3
   durability: 0
+  loot: 2
+  drop: {fileID: -889301666, guid: 450720c358aeb644582ecef65232de40, type: 3}
   hand: {fileID: 0}
   heroCollision: 0
 --- !u!60 &7559976781194266641
@@ -120,7 +122,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9375, y: 0.9375}
+    oldSize: {x: 2.8125, y: 4}
     newSize: {x: 0.85, y: 0.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -128,14 +130,21 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.13788514, y: 0.4627986}
-      - {x: -0.10783282, y: 0.4573357}
-      - {x: -0.44885868, y: 0.054714918}
-      - {x: -0.46038628, y: -0.23901081}
-      - {x: -0.11617923, y: -0.45355332}
-      - {x: 0.31800985, y: -0.4475211}
-      - {x: 0.4809063, y: -0.3411857}
-      - {x: 0.47287834, y: 0.18338549}
+    - - {x: -0.00447841, y: -0.8378844}
+      - {x: -0.48315373, y: -0.7980492}
+      - {x: -0.6300482, y: -0.85123277}
+      - {x: -0.72957915, y: -0.9755411}
+      - {x: -0.670222, y: -1.1497852}
+      - {x: -0.69640756, y: -1.4559995}
+      - {x: -0.39263606, y: -1.4137572}
+      - {x: -0.38879305, y: -1.6312858}
+      - {x: 0.108421445, y: -1.5600573}
+      - {x: 0.6150501, y: -1.6312858}
+      - {x: 0.55743885, y: -1.3534693}
+      - {x: 0.7430018, y: -1.4011662}
+      - {x: 0.7138646, y: -1.0918285}
+      - {x: 0.504022, y: -0.8917568}
+      - {x: 0.43405235, y: -0.81315744}
 --- !u!1001 &4613791140643722916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9078169127831983339, guid: fb721a2fa0bd84743b727d44d9d262b7, type: 3}
       propertyPath: m_Radius
-      value: 0.8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9078169127831983339, guid: fb721a2fa0bd84743b727d44d9d262b7, type: 3}
       propertyPath: m_Offset.x
