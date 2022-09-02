@@ -38,9 +38,6 @@ public abstract class BuildingCollision : MonoBehaviour
 
     public void OpenBuiMenu()
     {
-
-        Debug.Log("tak");
-
         placedBuilding.DeactivateOtherInputs();
 
         buiCanvas.gameObject.SetActive(true);

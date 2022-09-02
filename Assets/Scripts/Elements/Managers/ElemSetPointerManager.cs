@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemManager : ElementManager
+public abstract class ElemSetPointerManager : ElementManager
 {
     [SerializeField] GameObject gridManager;
 
@@ -11,10 +11,10 @@ public class ItemManager : ElementManager
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] Sprite denySprite;
 
-    ItemSO myElem;
+    protected ItemSO myElem;
 
-    GameObject setPointer;
-    Rigidbody2D rb;
+    protected GameObject setPointer;
+    protected Rigidbody2D rb;
 
     void Update()
     {
@@ -69,16 +69,11 @@ public class ItemManager : ElementManager
             { 
                 return false; 
             }
-
-        setPointer.GetComponent<SetPointerCD>().ResetCounter();
-
-        Transform parent = transform.Find("Item Container").transform;
-        Instantiate(myElem.GetPrefabObj(), GetMousePos(), Quaternion.identity, parent);
-
+            
         return true;
     }
 
-    Vector3 GetMousePos()
+    protected Vector3 GetMousePos()
     {
         Vector3 mousePos3 = Input.mousePosition;
 

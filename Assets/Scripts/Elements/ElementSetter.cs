@@ -51,5 +51,4 @@ public class ElementSetter : MonoBehaviour
 
         return new Vector3(mousePos3.x, mousePos3.y, 0); // mysz jest tam gdzie kamera czyli na -1
     }
-
 }

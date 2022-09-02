@@ -13,5 +13,4 @@ public abstract class ElementManager : MonoBehaviour
     public abstract bool MouseClickHandler(Vector3 mousePos);
 
     public abstract void SetSprite(Sprite newSprite);
-
 }

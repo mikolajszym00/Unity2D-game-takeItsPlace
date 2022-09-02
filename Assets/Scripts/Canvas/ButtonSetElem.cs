@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ButtonAction : MonoBehaviour
+public class ButtonSetElem : MonoBehaviour
 {
     [SerializeField] ButtonItem[] buttons;
     ItemSO choseItem = null;
