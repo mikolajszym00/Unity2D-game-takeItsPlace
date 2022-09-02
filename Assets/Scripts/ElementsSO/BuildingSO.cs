@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingSO : MonoBehaviour
+[CreateAssetMenu(fileName = "Building", menuName = "BuildingSO")]
+public class BuildingSO : ElemSO
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] float objectBoundariesRadius;
 
-    // Update is called once per frame
-    void Update()
+    public float GetObjectBoundariesRadius()
     {
-        
+        return objectBoundariesRadius;
     }
 }

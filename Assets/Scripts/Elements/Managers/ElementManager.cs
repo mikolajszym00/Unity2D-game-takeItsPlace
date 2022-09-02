@@ -6,7 +6,7 @@ public abstract class ElementManager : MonoBehaviour
 {
     // [SerializeField] protected Functions func;
 
-    public abstract void prepare(ItemSO elem);
+    public abstract void prepare(ElemSO elem);
 
     public abstract void clean();
 

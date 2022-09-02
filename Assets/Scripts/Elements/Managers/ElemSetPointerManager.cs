@@ -11,8 +11,6 @@ public abstract class ElemSetPointerManager : ElementManager
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] Sprite denySprite;
 
-    protected ItemSO myElem;
-
     protected GameObject setPointer;
     protected Rigidbody2D rb;
 
@@ -43,14 +41,10 @@ public abstract class ElemSetPointerManager : ElementManager
     //     }
     // }
 
-    public override void prepare(ItemSO elem)
+    public override void prepare(ElemSO elem)
     {
-        myElem = elem;
-
         setPointer = Instantiate(setPointerTemplate, GetMousePos(), Quaternion.identity, transform);
         rb = setPointer.GetComponent<Rigidbody2D>();
-
-        setPointer.GetComponent<CircleCollider2D>().radius = myElem.GetObjectBoundariesRadius();
     }
 
     public override void clean()
@@ -58,14 +52,16 @@ public abstract class ElemSetPointerManager : ElementManager
         Destroy(setPointer);
     }
 
-    public override void SetSprite(Sprite sp) {
+    public override void SetSprite(Sprite sp) 
+    {
         setPointer.GetComponent<SpriteRenderer>().sprite = sp;
     }
 
     public override bool MouseClickHandler(Vector3 mousePos) 
     {
-        if (!(setPointer.GetComponent<SetPointerCD>().CanBePlaced() &&
-              gridManager.GetComponent<GridManager>().IsPositionOnCoveredTiles(GetMousePos()))) 
+        if (!(setPointer.GetComponent<SetPointerCD>().CanBePlaced() 
+        // && gridManager.GetComponent<GridManager>().IsPositionOnCoveredTiles(GetMousePos()) // debug mode
+              )) 
             { 
                 return false; 
             }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01c3fccb95b14744c878389faabb3e51, type: 3}
-  m_Name: Rock
+  m_Name: Tree
   m_EditorClassIdentifier: 
-  godPrice: 6
-  humanPrice: 22
-  mySprite: {fileID: -1817324446, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
-  prefabObj: {fileID: 315258945576123649, guid: bbd206e46ff42f943a81971a47a3fa9a, type: 3}
-  isItem: 1
-  objectBoundariesRadius: 1
+  godPrice: 5
+  humanPrice: 55
+  mySprite: {fileID: -187423546, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
+  prefabObj: {fileID: 315258945576123649, guid: 246181e83f0c259479cdc3d943295f85, type: 3}
+  type: item
+  objectBoundariesRadius: 0.5

@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonElement : MonoBehaviour
+public abstract class ButtonElement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] protected ElemSO myElem;
+
+    public void SetMyElem(ElemSO newElem) {
+        myElem = newElem;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public ElemSO GetMyElem() {
+        return myElem;
     }
+
 }

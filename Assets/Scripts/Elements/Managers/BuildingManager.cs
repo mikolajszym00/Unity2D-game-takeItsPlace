@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class BuildingManager : ElemSetPointerManager
 {
+    BuildingSO myElem;
+
+    public override void prepare(ElemSO elem)
+    {
+        base.prepare(elem);
+
+        myElem = (BuildingSO)elem;
+        setPointer.GetComponent<CircleCollider2D>().radius = myElem.GetObjectBoundariesRadius();
+    }
+
     public override bool MouseClickHandler(Vector3 mousePos) 
     {
         if (!base.MouseClickHandler(mousePos)) { return false; }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public abstract class ElemSO : ScriptableObject
 
     [SerializeField] GameObject prefabObj;
 
-    [SerializeField] bool isItem;
+    [SerializeField] String type;
 
     public int GetGodPrice()
     {
@@ -22,9 +23,9 @@ public abstract class ElemSO : ScriptableObject
         return humanPrice;
     }
 
-    public bool IsItem()
+    public String GetElemType()
     {
-        return isItem;
+        return type;
     }
 
     public Sprite GetSprite()

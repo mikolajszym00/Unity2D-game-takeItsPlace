@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c3fccb95b14744c878389faabb3e51, type: 3}
   m_Name: Ground
   m_EditorClassIdentifier: 
-  isItem: 0
-  prefabFeatures: {fileID: 2909247356872944428, guid: 62a01f974ddb6d44a9400c5871953762, type: 3}
-  setPointerTemplate: {fileID: 1710000588421800688, guid: 6688c1dddfb4d9b419922d6d7098dad9, type: 3}
-  manager: {fileID: 106239307040403319, guid: f2878d996e0be6342926c964c5e26810, type: 3}
-  mySprite: {fileID: 21300000, guid: e4bc5c4d986130b4e8aaf1b565848c19, type: 3}
   godPrice: 12
   humanPrice: 12
+  mySprite: {fileID: 21300000, guid: e4bc5c4d986130b4e8aaf1b565848c19, type: 3}
+  prefabObj: {fileID: 0}
+  type: tile
   objectBoundariesRadius: 0

@@ -46,7 +46,7 @@ public class GridManager : ElementManager
         }
     }
 
-    public override void prepare(ItemSO elem)
+    public override void prepare(ElemSO elem)
     {
         foreach(Transform child in baredParent)
         {

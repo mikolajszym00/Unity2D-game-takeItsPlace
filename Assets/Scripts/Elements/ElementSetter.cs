@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class ElementSetter : MonoBehaviour
 
     [SerializeField] ElementManager itemManager;
     [SerializeField] ElementManager tileManager;
+    [SerializeField] ElementManager buildingManager;
 
     ElementManager manager;
 
@@ -19,12 +21,18 @@ public class ElementSetter : MonoBehaviour
         GetComponent<PlayerInput>().DeactivateInput();
     }
     
-    public void RunSetter(ItemSO elem)
+    public void RunSetter(ElemSO elem)
     {
         GetComponent<PlayerInput>().ActivateInput();
 
-        if (elem.IsItem()) { manager = itemManager; } // bardzo złe
-        else { manager = tileManager; }
+        if (elem.GetElemType() == "item") { manager = itemManager; } // bardzo złe
+        else 
+            if (elem.GetElemType() == "tile") { manager = tileManager; }
+            else { manager = buildingManager; }
+        
+
+        // if (elem.IsItem()) { manager = itemManager; } // bardzo złe
+        // else { manager = tileManager; }
 
         manager.prepare(elem);
         manager.SetSprite(elem.GetSprite());

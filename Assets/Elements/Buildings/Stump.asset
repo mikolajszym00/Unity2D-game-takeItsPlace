@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a8cdd6fbf403e4bb66d0d9b63814f3, type: 3}
+  m_Name: Stump
+  m_EditorClassIdentifier: 
+  godPrice: 2
+  humanPrice: 3
+  mySprite: {fileID: 21300000, guid: 15072df1de235d845bd122d8dda26b46, type: 3}
+  prefabObj: {fileID: 6288650295490383372, guid: 79ef855141012b84f81f78ec1fa962b2, type: 3}
+  type: building
+  objectBoundariesRadius: 3.5
