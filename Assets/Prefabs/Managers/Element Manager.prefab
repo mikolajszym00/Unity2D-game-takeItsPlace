@@ -265,6 +265,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 2734828409264239499, guid: 9761d67d2f8be6244b43b564f38f2969, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734828409264239499, guid: 9761d67d2f8be6244b43b564f38f2969, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734828409264239499, guid: 9761d67d2f8be6244b43b564f38f2969, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734828409555562601, guid: 9761d67d2f8be6244b43b564f38f2969, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734828409555562601, guid: 9761d67d2f8be6244b43b564f38f2969, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734828409555562601, guid: 9761d67d2f8be6244b43b564f38f2969, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4679475118057686598, guid: 9761d67d2f8be6244b43b564f38f2969, type: 3}
       propertyPath: m_Name
       value: Building Manager

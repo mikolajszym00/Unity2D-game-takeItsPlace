@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class ButtonSetElem : MonoBehaviour
 {
-    [SerializeField] ButtonElement[] buttons;
+    [SerializeField] GameObject[] buttons;
     ElemSO choseElem = null;
 
     [SerializeField] GameObject turnOffWhenClick;
@@ -13,13 +13,21 @@ public class ButtonSetElem : MonoBehaviour
 
     [SerializeField] GameObject ElemOrganizer;
 
+    BuildingCost buildingCost;
+
     public void OnButtonSelected (int index) 
     {
+        choseElem = buttons[index].GetComponent<ButtonBuilding>().GetMyElem(); // błąd bo sie miesza z god mode
+
+        buildingCost = buttons[index].GetComponent<BuildingCost>();
+
+        if (!buildingCost.CanBeBuilt()) { return; }
+
         turnOffWhenClick.SetActive(false);
         turnOnWhenClick.SetActive(true);
 
-        // jeśli cię stać czyli jeśli kolor jest zielony
-        choseElem = buttons[index].GetMyElem();
+        buildingCost.PayForBuilding();
+
         ElemOrganizer.GetComponent<ElementSetter>().RunSetter(choseElem);
     }
 }

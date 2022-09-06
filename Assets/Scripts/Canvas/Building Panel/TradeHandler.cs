@@ -7,6 +7,8 @@ using TMPro;
 
 public class TradeHandler : MonoBehaviour
 {
+    [SerializeField] GameObject placedBuilding;
+
     [SerializeField] GameObject inventoryObj;
     Inventory inventory;
 
@@ -57,5 +59,16 @@ public class TradeHandler : MonoBehaviour
         componentStockValueSetter.text = slider.value.ToString();
 
         productStockValueSetter.text = Mathf.FloorToInt(slider.value/4).ToString(); // mnożnik do zmiany
+    }
+
+    public void OnTradeClick()
+    {
+        placedBuilding.GetComponent<PlacedBuilding>().ActivateTrade();
+
+        inventory.AddToInventory(component, -Mathf.FloorToInt(slider.value/4)*4); // sprawdzic czy sie da
+        inventory.AddToInventory(product, Mathf.FloorToInt(slider.value/4));
+
+
+        // odbierz energię
     }
 }

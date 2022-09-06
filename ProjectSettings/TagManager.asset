@@ -56,6 +56,9 @@ TagManager:
   - name: Vegetation
     uniqueID: 2881570109
     locked: 0
+  - name: Building
+    uniqueID: 3327017099
+    locked: 0
   - name: SetPointer
     uniqueID: 3011370065
     locked: 0

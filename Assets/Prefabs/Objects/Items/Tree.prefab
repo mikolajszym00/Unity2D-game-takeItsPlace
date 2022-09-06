@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad95307d65388b243a14576118ab6b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initDurability: 3
+  initDurability: 1
   durability: 0
-  loot: 2
+  loot: 10
   drop: {fileID: -889301666, guid: 450720c358aeb644582ecef65232de40, type: 3}
   hand: {fileID: 0}
   heroCollision: 0

@@ -50,4 +50,15 @@ public class PlacedBuilding : MonoBehaviour
         standByTheBui = false;
         hero.SetActive(false);
     }
+
+    public void ActivateTrade()
+    {
+        buiCanvas.SetActive(false);
+        hero.SetActive(true);
+    }
+
+    public void OnCloseClick()
+    {
+        ActivateTrade(); 
+    }
 }

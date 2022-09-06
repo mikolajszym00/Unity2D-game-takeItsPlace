@@ -32,7 +32,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5202103932623372366}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -365,7 +365,7 @@ RectTransform:
   - {fileID: 5202103932404983992}
   - {fileID: 5202103931184431003}
   m_Father: {fileID: 5202103932623372366}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 5202103930892665585}
   - component: {fileID: 5202103930892665584}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Trade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,7 +467,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5202103932623372366}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -555,7 +555,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5202103930892665585}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5202103932623372365}
+        m_TargetAssemblyTypeName: TradeHandler, Assembly-CSharp
+        m_MethodName: OnTradeClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5202103931123377672
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,11 +826,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5202103930645710990}
+  - {fileID: 3026382899955569068}
   - {fileID: 5202103930769115731}
   - {fileID: 7213836487301956326}
   - {fileID: 5202103930892665587}
   - {fileID: 7213836489073146869}
-  - {fileID: 3026382899955569068}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -901,7 +913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3183244382269205832, guid: 32d30c4b0e439884e9840d2ca85fda40, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3183244382269205832, guid: 32d30c4b0e439884e9840d2ca85fda40, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1012,7 +1024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3183244382269205832, guid: 32d30c4b0e439884e9840d2ca85fda40, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3183244382269205832, guid: 32d30c4b0e439884e9840d2ca85fda40, type: 3}
       propertyPath: m_AnchorMax.x
