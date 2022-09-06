@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class BuildingCost : MonoBehaviour
+public class BuildingCost : ElemCost
 {
     [SerializeField] GameObject inventoryObj;
     Inventory inventory;
@@ -17,12 +17,7 @@ public class BuildingCost : MonoBehaviour
         inventory = inventoryObj.GetComponent<Inventory>();
     }
 
-    public GameObject[] GetMyComponents()
-    {
-        return components;
-    }
-
-    public bool CanBeBuilt()
+    public override bool CanBeBuilt()
     {
         foreach(GameObject comp in components)
         {
@@ -39,6 +34,19 @@ public class BuildingCost : MonoBehaviour
         return true;
     }
 
+    public override void PayForElem()
+    {
+        foreach (GameObject comp in components)
+        {
+            inventory.AddToInventory(GetSpriteFromComp(comp), -GetPriceFromComp(comp));
+        }
+    }
+
+    // public GameObject[] GetMyComponents()
+    // {
+    //     return components;
+    // }
+
     public Sprite GetSpriteFromComp(GameObject comp)
     {
         return comp.transform.Find("Elem").GetComponent<Image>().sprite;
@@ -48,13 +56,5 @@ public class BuildingCost : MonoBehaviour
     {
         Transform stockValue = comp.transform.Find("Stock BG").Find("Stock Value");
         return int.Parse(stockValue.gameObject.GetComponent<TextMeshProUGUI>().text);
-    }
-
-    public void PayForBuilding()
-    {
-        foreach (GameObject comp in components)
-        {
-            inventory.AddToInventory(GetSpriteFromComp(comp), -GetPriceFromComp(comp));
-        }
     }
 }

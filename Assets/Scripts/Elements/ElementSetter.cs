@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class ElementSetter : MonoBehaviour
 {
     [SerializeField] GameObject buttonPanel;
+    ElemCost elemCosts;
 
     [SerializeField] Functions func;
 
@@ -21,18 +22,16 @@ public class ElementSetter : MonoBehaviour
         GetComponent<PlayerInput>().DeactivateInput();
     }
     
-    public void RunSetter(ElemSO elem)
+    public void RunSetter(ElemSO elem, ElemCost elemCost)
     {
+        elemCosts = elemCost;
+
         GetComponent<PlayerInput>().ActivateInput();
 
-        if (elem.GetElemType() == "item") { manager = itemManager; } // bardzo złe
+        if (elem.GetElemType() == "item") { manager = itemManager; } // bardzo bardzo złe
         else 
             if (elem.GetElemType() == "tile") { manager = tileManager; }
             else { manager = buildingManager; }
-        
-
-        // if (elem.IsItem()) { manager = itemManager; } // bardzo złe
-        // else { manager = tileManager; }
 
         manager.prepare(elem);
         manager.SetSprite(elem.GetSprite());
@@ -40,7 +39,12 @@ public class ElementSetter : MonoBehaviour
 
     void OnSet()
     {
-        manager.MouseClickHandler(GetMousePos());
+        if (!elemCosts.CanBeBuilt()) { return; }
+
+        if (manager.MouseClickHandler(GetMousePos()))
+        {
+            elemCosts.PayForElem();
+        }
     }
 
     void OnDelete() 

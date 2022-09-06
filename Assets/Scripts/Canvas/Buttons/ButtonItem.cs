@@ -20,12 +20,11 @@ public class ButtonItem : ButtonElement
 
         GameObject price = transform.Find("Price").gameObject;
 
-        GameObject humanPrc = price.transform.Find("HumanPrc").gameObject;
-
-        TextMeshProUGUI textt = humanPrc.GetComponent<TextMeshProUGUI>();
+        GameObject humanPrc = price.transform.Find("PrayPrc").gameObject;
+        
         humanPrc.GetComponent<TextMeshProUGUI>().text = myElem.GetHumanPrice().ToString();
 
-        GameObject godPrc = price.transform.Find("GodPrc").gameObject;
+        GameObject godPrc = price.transform.Find("GiftPrc").gameObject;
         godPrc.GetComponent<TextMeshProUGUI>().text = myElem.GetGodPrice().ToString();
     }
 

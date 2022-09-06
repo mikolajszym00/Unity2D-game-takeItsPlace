@@ -6,28 +6,26 @@ using UnityEngine.InputSystem;
 public class ButtonSetElem : MonoBehaviour
 {
     [SerializeField] GameObject[] buttons;
-    ElemSO choseElem = null;
+    ElemSO choseElem;
 
     [SerializeField] GameObject turnOffWhenClick;
     [SerializeField] GameObject turnOnWhenClick;
 
     [SerializeField] GameObject ElemOrganizer;
 
-    BuildingCost buildingCost;
+    ElemCost elemCosts;
 
     public void OnButtonSelected (int index) 
     {
-        choseElem = buttons[index].GetComponent<ButtonBuilding>().GetMyElem(); // błąd bo sie miesza z god mode
+        choseElem = buttons[index].GetComponent<ButtonElement>().GetMyElem();
+        
+        elemCosts = buttons[index].GetComponent<ElemCost>();
 
-        buildingCost = buttons[index].GetComponent<BuildingCost>();
-
-        if (!buildingCost.CanBeBuilt()) { return; }
+        if (!elemCosts.CanBeBuilt()) { return; }
 
         turnOffWhenClick.SetActive(false);
         turnOnWhenClick.SetActive(true);
 
-        buildingCost.PayForBuilding();
-
-        ElemOrganizer.GetComponent<ElementSetter>().RunSetter(choseElem);
+        ElemOrganizer.GetComponent<ElementSetter>().RunSetter(choseElem, elemCosts);
     }
 }

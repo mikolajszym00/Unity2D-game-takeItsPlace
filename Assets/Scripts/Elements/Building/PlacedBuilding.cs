@@ -24,6 +24,9 @@ public class PlacedBuilding : MonoBehaviour
     {
         if (!standByTheBui) { return; }
 
+
+// po wyłączeniu lub trajdzie wymaga kliknięcia myszy żeby dziłało 
+
         DeactivateOtherInputs();
         buiCanvas.SetActive(true);
 
@@ -51,14 +54,15 @@ public class PlacedBuilding : MonoBehaviour
         hero.SetActive(false);
     }
 
-    public void ActivateTrade()
+    public void DeactivateTrade()
     {
+        standByTheBui = true; 
         buiCanvas.SetActive(false);
         hero.SetActive(true);
     }
 
     public void OnCloseClick()
     {
-        ActivateTrade(); 
+        DeactivateTrade(); 
     }
 }

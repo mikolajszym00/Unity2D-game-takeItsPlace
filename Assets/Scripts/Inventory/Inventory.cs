@@ -17,6 +17,8 @@ public class Inventory : MonoBehaviour
 
     public void AddToInventory(Sprite sprite, int value)
     {
+        if (value == 0) { return; }
+
         if (!ItemInventory.ContainsKey(sprite))
         {
             ItemInventory.Add(sprite, value);

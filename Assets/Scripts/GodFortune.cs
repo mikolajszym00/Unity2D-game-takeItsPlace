@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class GodFortune : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] int giftCoin;
+    [SerializeField] int prayCoin;
+
+    public int GetGiftCoin()
     {
-        
+        return giftCoin;
     }
 
-    // Update is called once per frame
-    void Update()
+    public int GetPrayCoin()
     {
-        
+        return prayCoin;
     }
+
+    public void AddGiftCoin(int value)
+    {
+        giftCoin += value;
+    }
+
+    public void AddPrayCoin(int value)
+    {
+        prayCoin += value;
+    }
+
 }

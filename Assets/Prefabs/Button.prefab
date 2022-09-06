@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 3584224270411054465}
   - component: {fileID: 5250856505382250886}
   - component: {fileID: 1495198364536837844}
+  - component: {fileID: 5628785798426322636}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -358,7 +359,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060be4a394d5a994384add9d74a0e6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myItem: {fileID: 11400000, guid: 66abdf9dc634546428fc27314ca558a5, type: 2}
+  myElem: {fileID: 0}
+--- !u!114 &5628785798426322636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353673579230069699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b32aba5217a4834099b79db1edd263b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fortuneObj: {fileID: 0}
+  giftCoinObj: {fileID: 8403268902424903988}
+  prayCoinObj: {fileID: 8882990127223248458}
 --- !u!1 &6410992511490390883
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +539,7 @@ GameObject:
   - component: {fileID: 373696605231809701}
   - component: {fileID: 457673710459195314}
   m_Layer: 5
-  m_Name: GodPrc
+  m_Name: GiftPrc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -658,7 +674,7 @@ GameObject:
   - component: {fileID: 500151718019588100}
   - component: {fileID: 5369097229781172111}
   m_Layer: 5
-  m_Name: HumanPrc
+  m_Name: PrayPrc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
