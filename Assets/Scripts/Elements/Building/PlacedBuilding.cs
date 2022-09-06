@@ -4,17 +4,35 @@ using UnityEngine;
 
 public class PlacedBuilding : MonoBehaviour
 {
+
+    [SerializeField] GameObject buiCanvas;
+    GameObject tradeMenu;
+
     bool standByTheBui = false;
 
-    GameObject building;
+    GameObject buildingObj;
+    BuildingCollision building;
+
     [SerializeField] GameObject hero;
+
+    void Start()
+    {
+        tradeMenu = buiCanvas.transform.Find("Trade Menu").gameObject;
+    }
 
     void OnEnter()
     {
-        if (standByTheBui)
-        {
-            building.GetComponent<BuildingCollision>().OpenBuiMenu();
-        }
+        if (!standByTheBui) { return; }
+
+        DeactivateOtherInputs();
+        buiCanvas.SetActive(true);
+
+        building = buildingObj.GetComponent<BuildingCollision>();
+
+        tradeMenu.GetComponent<TradeHandler>().InitValues(building.GetMyBuildingname(), 
+                                                          building.GetMyComponent(),
+                                                          building.GetMyProduct());
+        tradeMenu.GetComponent<TradeHandler>().SetSlider();
     }
 
     public void SetStandByTheBui(bool newState)
@@ -24,7 +42,7 @@ public class PlacedBuilding : MonoBehaviour
 
     public void SetBuilding(GameObject newBuilding)
     {
-        building = newBuilding;
+        buildingObj = newBuilding;
     }
 
     public void DeactivateOtherInputs()

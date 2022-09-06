@@ -1,22 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class BuildingCollision : MonoBehaviour
 {
+    [SerializeField] protected Sprite[] component;
+    [SerializeField] protected Sprite[] product;
+    [SerializeField] protected String buildingname;
+
     protected GameObject buildingCont;
     protected PlacedBuilding placedBuilding;
 
-    protected Transform buiCanvas;
     protected GameObject tradeMenu;
 
     protected virtual void Start()
     {
         buildingCont = transform.parent.gameObject;
         placedBuilding = buildingCont.GetComponent<PlacedBuilding>();
-
-        buiCanvas = transform.Find("Building Canvas");    
-    
     }
 
     void OnTriggerEnter2D(Collider2D other) 
@@ -36,12 +37,18 @@ public abstract class BuildingCollision : MonoBehaviour
         }
     }
 
-    public void OpenBuiMenu()
+    public Sprite[] GetMyComponent()
     {
-        placedBuilding.DeactivateOtherInputs();
+        return component;
+    }
 
-        buiCanvas.gameObject.SetActive(true);
+    public Sprite[] GetMyProduct()
+    {
+        return product;
+    }
 
-        tradeMenu.GetComponent<StumpTradeHandler>().SetSlider();
+    public String GetMyBuildingname()
+    {
+        return buildingname;
     }
 }

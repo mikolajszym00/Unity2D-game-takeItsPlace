@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class StumpTradeHandler : MonoBehaviour
+public class TradeHandler : MonoBehaviour
 {
-    [SerializeField] GameObject inventoryObj; // musi byc przekazywany jako parametr podczas tworzenia
+    [SerializeField] GameObject inventoryObj;
     Inventory inventory;
 
     Sprite component;
@@ -32,11 +32,11 @@ public class StumpTradeHandler : MonoBehaviour
         productStockValueSetter = productStockValueObj.GetComponent<TextMeshProUGUI>();
     }
 
-    public void InitValues(String _buildingname, Sprite _component, Sprite _product)
+    public void InitValues(String _buildingname, Sprite[] _component, Sprite[] _product)
     {
         buildingname = _buildingname;
-        component = _component;
-        product =_product;
+        component = _component[0];
+        product =_product[0];
 
         transform.Find("Name").GetComponent<TextMeshProUGUI>().text = buildingname;
         transform.Find("Component").Find("Elem").GetComponent<Image>().sprite = component;
