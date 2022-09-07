@@ -26,7 +26,7 @@ public class InventoryDisplayer : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            if (child.gameObject.GetComponent<Image>().sprite = sprite)
+            if (child.Find("Elem").gameObject.GetComponent<Image>().sprite == sprite)
             {
                 Destroy(child.gameObject);
                 break;
@@ -38,10 +38,15 @@ public class InventoryDisplayer : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            Transform stockBG = child.Find("Stock BG");
-            GameObject stockText = stockBG.Find("Stock Value").gameObject;
+            if (child.Find("Elem").gameObject.GetComponent<Image>().sprite == sprite)
+            {
+                Transform stockBG = child.Find("Stock BG");
+                GameObject stockText = stockBG.Find("Stock Value").gameObject;
 
-            stockText.GetComponent<TextMeshProUGUI>().text = value.ToString();
+                stockText.GetComponent<TextMeshProUGUI>().text = value.ToString();
+
+                break;
+            }
         }
     }
 }

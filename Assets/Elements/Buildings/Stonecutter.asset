@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a8cdd6fbf403e4bb66d0d9b63814f3, type: 3}
+  m_Name: Stonecutter
+  m_EditorClassIdentifier: 
+  godPrice: 0
+  humanPrice: 0
+  mySprite: {fileID: 21300000, guid: 0af4cb6257decdc44b6380585235ae0d, type: 3}
+  prefabObj: {fileID: 4081497379279082160, guid: 6ce6b6102539eff419b6295aad779592, type: 3}
+  type: building
+  objectBoundariesRadius: 2.3

@@ -65,8 +65,6 @@ public class ItemAct : MonoBehaviour
         if (durability <= 0) {
             Destroy(gameObject);
             inventory.AddToInventory(drop, loot);
-            inventory.AddToInventory(drop, loot);
-            inventory.AddToInventory(drop, -1);
         }
     }
 }
