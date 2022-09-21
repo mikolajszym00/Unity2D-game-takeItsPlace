@@ -114,6 +114,7 @@ MonoBehaviour:
   itemManager: {fileID: 4127870499603392961}
   tileManager: {fileID: 4127870500065439734}
   buildingManager: {fileID: 8242697111243562832}
+  buildingUgradeObj: {fileID: 0}
 --- !u!114 &4127870499339762531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +350,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7829366249264766281, guid: 9761d67d2f8be6244b43b564f38f2969, type: 3}
   m_PrefabInstance: {fileID: 8242697111031919411}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4830931667283104857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3560407321214084970, guid: 9761d67d2f8be6244b43b564f38f2969, type: 3}
+  m_PrefabInstance: {fileID: 8242697111031919411}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6956313922470822505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4830931667283104857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4ae47a822b4b941821253f1ea73fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  godMode: {fileID: 0}
 --- !u!114 &8242697111243562832 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 352169059, guid: 9761d67d2f8be6244b43b564f38f2969, type: 3}

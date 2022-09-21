@@ -97,7 +97,7 @@ public class GridManager : ElementManager
         }
     }
 
-    public override bool MouseClickHandler(Vector3 mousePos)
+    public override GameObject MouseClickHandler(Vector3 mousePos)
     {
         (int x, int y) mouse = Floor(mousePos + new Vector3(0.5f, 0.5f, 0f)); 
 
@@ -110,11 +110,11 @@ public class GridManager : ElementManager
                 tile.gameObject.GetComponent<Tile>().SetCovered(mySprite, true);
                 CreateBareTiles(pos.x, pos.y);
 
-                return true;
+                return tile.gameObject;
             }
         }
 
-        return false;
+        return null;
     }
 
     public bool IsPositionOnCoveredTiles(Vector3 myPos) // mozna przyspieszyc szukanie jesli 

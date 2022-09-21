@@ -36,7 +36,6 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            Debug.Log("tak");
             ItemInventory[sprite] = Math.Min(newValue, 100);
             invDisplayer.Set(sprite, Math.Min(newValue, 100));
         }

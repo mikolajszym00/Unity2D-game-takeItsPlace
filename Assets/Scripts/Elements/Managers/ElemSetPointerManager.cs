@@ -57,7 +57,7 @@ public abstract class ElemSetPointerManager : ElementManager
         setPointer.GetComponent<SpriteRenderer>().sprite = sp;
     }
 
-    public override bool MouseClickHandler(Vector3 mousePos) 
+    protected bool MouseClickCorrectness(Vector3 mousePos) 
     {
         if (!(setPointer.GetComponent<SetPointerCD>().CanBePlaced() 
         // && gridManager.GetComponent<GridManager>().IsPositionOnCoveredTiles(GetMousePos()) // debug mode

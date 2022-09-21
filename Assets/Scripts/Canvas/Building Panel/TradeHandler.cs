@@ -63,7 +63,7 @@ public class TradeHandler : MonoBehaviour
 
     public void OnTradeClick()
     {
-        placedBuilding.GetComponent<PlacedBuilding>().DeactivateTrade();
+        placedBuilding.GetComponent<PlacedBuildingHuman>().DeactivateTrade();
 
         inventory.AddToInventory(component, -Mathf.FloorToInt(slider.value/4)*4);
         inventory.AddToInventory(product, Mathf.FloorToInt(slider.value/4));

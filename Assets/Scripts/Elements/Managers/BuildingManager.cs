@@ -5,24 +5,27 @@ using UnityEngine;
 public class BuildingManager : ElemSetPointerManager
 {
     BuildingSO myElem;
+    GameObject boundaries;
 
     public override void prepare(ElemSO elem)
     {
         base.prepare(elem);
 
         myElem = (BuildingSO)elem;
-        setPointer.GetComponent<CircleCollider2D>().radius = myElem.GetObjectBoundariesRadius();
+
+        boundaries = myElem.GetPrefabObj().transform.Find("Object Boundaries").gameObject;
+
+        setPointer.GetComponent<CircleCollider2D>().radius = boundaries.GetComponent<CircleCollider2D>().radius;
     }
 
-    public override bool MouseClickHandler(Vector3 mousePos) 
+    public override GameObject MouseClickHandler(Vector3 mousePos) 
     {
-        if (!base.MouseClickHandler(mousePos)) { return false; }
+        if (!MouseClickCorrectness(mousePos)) { return null; }
 
         setPointer.GetComponent<SetPointerCD>().ResetCounter();
 
-        Transform parent = transform.Find("Building Container").transform; //!!!!
-        Instantiate(myElem.GetPrefabObj(), base.GetMousePos(), Quaternion.identity, parent);
+        Transform parent = transform.Find("Building Container").transform;
 
-        return true;
+        return Instantiate(myElem.GetPrefabObj(), base.GetMousePos(), Quaternion.identity, parent);
     }
 }

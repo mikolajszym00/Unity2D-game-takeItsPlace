@@ -159,10 +159,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   component:
-  - {fileID: -455985500, guid: 450720c358aeb644582ecef65232de40, type: 3}
+  - {fileID: -455985500, guid: f015eef69d5771c419b43ce3e00c76e5, type: 3}
   product:
-  - {fileID: -1396133025, guid: 450720c358aeb644582ecef65232de40, type: 3}
-  buildingname: Lommer
+  - {fileID: -1396133025, guid: f015eef69d5771c419b43ce3e00c76e5, type: 3}
+  buildingname: Loomer
 --- !u!1001 &8772150234330879669
 PrefabInstance:
   m_ObjectHideFlags: 0

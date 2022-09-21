@@ -10,7 +10,7 @@ public abstract class ElementManager : MonoBehaviour
 
     public abstract void clean();
 
-    public abstract bool MouseClickHandler(Vector3 mousePos);
+    public abstract GameObject MouseClickHandler(Vector3 mousePos);
 
     public abstract void SetSprite(Sprite newSprite);
 }

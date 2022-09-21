@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class ItemManager : ElemSetPointerManager
 {
+    [SerializeField] GameObject buildingContainer;
+
     ItemSO myElem;
+    GameObject boundaries;
 
     public override void prepare(ElemSO elem)
     {
         base.prepare(elem);
 
         myElem = (ItemSO)elem;
-        setPointer.GetComponent<CircleCollider2D>().radius = myElem.GetObjectBoundariesRadius();
+        boundaries = myElem.GetPrefabObj().transform.Find("Object Boundaries").gameObject;
+
+        setPointer.GetComponent<CircleCollider2D>().radius = boundaries.GetComponent<CircleCollider2D>().radius;
     }
 
-    public override bool MouseClickHandler(Vector3 mousePos) 
+    public override GameObject MouseClickHandler(Vector3 mousePos) 
     {
-        if (!base.MouseClickHandler(mousePos)) { return false; }
+        if (!MouseClickCorrectness(mousePos)) { return null; }
 
         setPointer.GetComponent<SetPointerCD>().ResetCounter();
 
-        Transform parent = transform.Find("Item Container").transform; //!!!!
-        Instantiate(myElem.GetPrefabObj(), base.GetMousePos(), Quaternion.identity, parent);
+        Transform parent = transform.Find("Item Container").transform;
 
-        return true;
+        GameObject item = Instantiate(myElem.GetPrefabObj(), base.GetMousePos(), Quaternion.identity, parent);
+        
+        PlacedBuildingHuman pbh = buildingContainer.GetComponent<PlacedBuildingHuman>();
+        item.GetComponent<ItemAct>().InitItem(base.GetMousePos(), pbh);
+
+        return item;
     }
 
 
@@ -102,12 +111,5 @@ public class ItemManager : ElemSetPointerManager
     //     return true;
     // }
 
-    // Vector3 GetMousePos()
-    // {
-    //     Vector3 mousePos3 = Input.mousePosition;
 
-    //     mousePos3 = Camera.main.ScreenToWorldPoint(mousePos3);
-
-    //     return new Vector3(mousePos3.x, mousePos3.y, 0); // mysz jest tam gdzie kamera czyli na -1
-    // }
 }

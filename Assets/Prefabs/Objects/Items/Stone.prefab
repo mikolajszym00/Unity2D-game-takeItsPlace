@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initDurability: 2
   durability: 0
-  loot: 2
+  loot: 1
   drop: {fileID: -1817324446, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
   hand: {fileID: 0}
   heroCollision: 0

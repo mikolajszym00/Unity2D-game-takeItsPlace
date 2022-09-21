@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060be4a394d5a994384add9d74a0e6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myElem: {fileID: 11400000, guid: 66abdf9dc634546428fc27314ca558a5, type: 2}
+  myElem: {fileID: 11400000, guid: 1f5dcae1293cd3d428de18f70029f131, type: 2}
 --- !u!114 &5628785798426322636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1427004999, guid: 450720c358aeb644582ecef65232de40, type: 3}
+  m_Sprite: {fileID: -2088842927, guid: f015eef69d5771c419b43ce3e00c76e5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1132137179, guid: 450720c358aeb644582ecef65232de40, type: 3}
+  m_Sprite: {fileID: -1132137179, guid: f015eef69d5771c419b43ce3e00c76e5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

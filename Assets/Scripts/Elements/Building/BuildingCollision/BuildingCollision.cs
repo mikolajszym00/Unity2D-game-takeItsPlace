@@ -10,14 +10,14 @@ public abstract class BuildingCollision : MonoBehaviour
     [SerializeField] protected String buildingname;
 
     protected GameObject buildingCont;
-    protected PlacedBuilding placedBuilding;
+    protected PlacedBuildingHuman placedBuilding;
 
     protected GameObject tradeMenu;
 
     protected virtual void Start()
     {
         buildingCont = transform.parent.gameObject;
-        placedBuilding = buildingCont.GetComponent<PlacedBuilding>();
+        placedBuilding = buildingCont.GetComponent<PlacedBuildingHuman>();
     }
 
     void OnTriggerEnter2D(Collider2D other) 

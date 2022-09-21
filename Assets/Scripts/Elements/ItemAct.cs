@@ -18,6 +18,9 @@ public class ItemAct : MonoBehaviour
     GameObject inventoryObj;
     Inventory inventory;
 
+    PlacedBuildingHuman placedBuildingHuman;
+
+    Vector3 position;
 
     void Start()
     {
@@ -32,6 +35,13 @@ public class ItemAct : MonoBehaviour
     void Update()
     {
         Act();
+    }
+
+    public void InitItem(Vector3 pos, PlacedBuildingHuman pbh)
+    {
+        position = pos;
+        placedBuildingHuman = pbh;
+        
     }
 
     void OnTriggerEnter2D(Collider2D other) 
@@ -64,7 +74,9 @@ public class ItemAct : MonoBehaviour
 
         if (durability <= 0) {
             Destroy(gameObject);
+
             inventory.AddToInventory(drop, loot);
+            placedBuildingHuman.checkDowngrades(position);
         }
     }
 }

@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlacedBuilding : MonoBehaviour
+public class PlacedBuildingHuman : MonoBehaviour
+// human interaction with building
 {
+    [SerializeField] GameObject humanMode;
 
     [SerializeField] GameObject buiCanvas;
     GameObject tradeMenu;
@@ -22,10 +24,9 @@ public class PlacedBuilding : MonoBehaviour
 
     void OnEnter()
     {
-        if (!standByTheBui) { return; }
+        if (!(standByTheBui && humanMode.activeSelf)) { return; }
 
-
-// po wyłączeniu lub trajdzie wymaga kliknięcia myszy żeby dziłało 
+        // po wyłączeniu lub trajdzie wymaga kliknięcia myszy żeby dziłało 
 
         DeactivateOtherInputs();
         buiCanvas.SetActive(true);
@@ -64,5 +65,16 @@ public class PlacedBuilding : MonoBehaviour
     public void OnCloseClick()
     {
         DeactivateTrade(); 
+    }
+
+    public void checkDowngrades(Vector3 mousePos) 
+    {
+        foreach (Transform building in transform)
+        {
+            if (building.Find("Object Upgrade Area").gameObject.GetComponent<CircleCollider2D>().bounds.Contains(mousePos))
+            {
+                building.gameObject.GetComponent<BuildingUpgrade>().RefreshCurrentLevel();
+            }
+        }
     }
 }

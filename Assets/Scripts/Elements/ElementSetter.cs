@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 public class ElementSetter : MonoBehaviour
 {
     [SerializeField] GameObject buttonPanel;
+
+    ElemSO myElem;
     ElemCost elemCosts;
 
     [SerializeField] Functions func;
@@ -17,13 +19,18 @@ public class ElementSetter : MonoBehaviour
 
     ElementManager manager;
 
+    [SerializeField] GameObject buildingContainer;
+    PlacedBuildingGod placedBuildingGod;
+
     void Start()
     {
         GetComponent<PlayerInput>().DeactivateInput();
+        placedBuildingGod = buildingContainer.GetComponent<PlacedBuildingGod>();
     }
     
     public void RunSetter(ElemSO elem, ElemCost elemCost)
     {
+        myElem = elem;
         elemCosts = elemCost;
 
         GetComponent<PlayerInput>().ActivateInput();
@@ -32,7 +39,7 @@ public class ElementSetter : MonoBehaviour
         else 
             if (elem.GetElemType() == "tile") { manager = tileManager; }
             else { manager = buildingManager; }
-
+            
         manager.prepare(elem);
         manager.SetSprite(elem.GetSprite());
    }
@@ -41,9 +48,13 @@ public class ElementSetter : MonoBehaviour
     {
         if (!elemCosts.CanBeBuilt()) { return; }
 
-        if (manager.MouseClickHandler(GetMousePos()))
+        Vector3 mousePos = GetMousePos();
+
+        GameObject settedElem = manager.MouseClickHandler(mousePos);
+        if (settedElem) 
         {
             elemCosts.PayForElem();
+            placedBuildingGod.CheckUpgrades(mousePos, myElem.GetSprite(), settedElem);
         }
     }
 

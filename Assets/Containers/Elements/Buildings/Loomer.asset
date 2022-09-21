@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0a8cdd6fbf403e4bb66d0d9b63814f3, type: 3}
-  m_Name: Lommer
+  m_Name: Loomer
   m_EditorClassIdentifier: 
   godPrice: 0
   humanPrice: 0
