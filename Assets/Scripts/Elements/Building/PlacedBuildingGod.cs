@@ -10,9 +10,12 @@ public class PlacedBuildingGod : MonoBehaviour
 
     [SerializeField] GameObject buiCanvas;
 
-    void OnClick() // ma nie działać jeśli mamy item w ręce (item i tak nie zostanie położony na budynku)
-    { // działa nawet jeśli jest otworzony displayer jakiegoś budynku
-        if (!godMode.activeSelf) { return; }
+    bool upgradeWindowOpened = false;
+
+    void OnClick() // co jeśli zmienimy tryby
+    {
+        if (!godMode.activeSelf || upgradeWindowOpened) 
+        { return; }
 
         Vector3 mousePos = GetMousePos();
 
@@ -22,6 +25,8 @@ public class PlacedBuildingGod : MonoBehaviour
             {
                 buiCanvas.SetActive(true); 
                 building.gameObject.GetComponent<BuildingUpgrade>().DisplayUpgradeWindow(upgradeMenu);
+                
+                upgradeWindowOpened = true;
             }
         }
     }
@@ -46,6 +51,7 @@ public class PlacedBuildingGod : MonoBehaviour
         upgradeMenu.GetUpgradeDisplayer().DestroyRequired();
 
         buiCanvas.SetActive(false);
+        upgradeWindowOpened = false;
     }
 
     Vector3 GetMousePos()

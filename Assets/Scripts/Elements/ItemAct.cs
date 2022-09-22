@@ -73,10 +73,10 @@ public class ItemAct : MonoBehaviour
         }
 
         if (durability <= 0) {
-            Destroy(gameObject);
-
             inventory.AddToInventory(drop, loot);
-            placedBuildingHuman.checkDowngrades(position);
+            placedBuildingHuman.checkDowngrades(gameObject, position);
+
+            Destroy(gameObject);
         }
     }
 }

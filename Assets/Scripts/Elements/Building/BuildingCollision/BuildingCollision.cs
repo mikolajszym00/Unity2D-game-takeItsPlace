@@ -32,7 +32,8 @@ public abstract class BuildingCollision : MonoBehaviour
             placedBuilding.SetStandByTheBui(true);
             placedBuilding.SetBuilding(gameObject);
 
-            interaction.SetCircleVisability(true);
+            interaction.SetCircleVisability(true); //tu odwołać się do building upgrade i przeiterować wszystkie
+            // elementy które należą do upgradu i włączyć ich widoczność. Nie włączać widoczności dużego koła (bo po co)
         }
     }
     

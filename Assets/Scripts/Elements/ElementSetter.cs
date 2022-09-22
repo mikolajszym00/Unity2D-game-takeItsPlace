@@ -34,6 +34,7 @@ public class ElementSetter : MonoBehaviour
         elemCosts = elemCost;
 
         GetComponent<PlayerInput>().ActivateInput();
+        placedBuildingGod.GetComponent<PlayerInput>().DeactivateInput();
 
         if (elem.GetElemType() == "item") { manager = itemManager; } // bardzo bardzo złe
         else 
@@ -63,6 +64,8 @@ public class ElementSetter : MonoBehaviour
         manager.clean();
 
         GetComponent<PlayerInput>().DeactivateInput();
+        placedBuildingGod.GetComponent<PlayerInput>().ActivateInput();
+
         buttonPanel.SetActive(true);
     }
 

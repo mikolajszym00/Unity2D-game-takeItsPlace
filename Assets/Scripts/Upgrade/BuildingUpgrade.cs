@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingUpgrade : MonoBehaviour
+public class BuildingUpgrade : MonoBehaviour // moznaby zmienić, że upgrade posiada sprite i wymaganą ilość
+// sprite który koliduje z budynkiem jest dodawany do słownika podczas sprawdzania poziomu tworzony jest słownik
+// rezerwowy od którego odejmowane są wartości wymagane dla kolejnych leveli dopóki jakiś poziom nie sprawi ze bedzie ujemna ilość
 {
     [SerializeField] BuildingCollision buiCollision;
 
@@ -41,7 +43,7 @@ public class BuildingUpgrade : MonoBehaviour
             { return; }
 
         int i = 0;
-        foreach (Sprite levelSprite in myUpgradePath.GetSpritesFromCurentLevel(currLevel))
+        foreach (Sprite levelSprite in myUpgradePath.GetSpritesFromLevel(currLevel))
         {
             if (newSprite == levelSprite)
             {
@@ -50,10 +52,7 @@ public class BuildingUpgrade : MonoBehaviour
                 {
                     levels[currLevel].SetElem(i, elem);
 
-                    if (levels[currLevel].levelCompleted())
-                    {                        
-                        currLevel++;
-                    }
+                    currLevel += CheckLevelCompleting(currLevel);
 
                     break;
                 }
@@ -63,9 +62,40 @@ public class BuildingUpgrade : MonoBehaviour
         }
     }
 
-    public void RefreshCurrentLevel() // funkcja bedzie kazała odsiwieżyć display
+    public int CheckLevelCompleting(int currLevel)
     {
-        // trzeba przeiterować wsztkei levele i spradzić który jest najwyższy
+        int completedLevels = 0;
+        for (int i = currLevel; i < levels.Length; i++)
+        {
+            if (levels[i].levelCompleted()) 
+            {
+                completedLevels++;
+            } else
+            {
+                break;
+            }
+        }
+
+        return completedLevels;
+    }
+
+    public void RefreshCurrentLevel(GameObject destroyedObj, UpgradeMenu upgradeMenu)
+    {
+        int i = 0;
+        foreach (LevelContainer level in levels)
+        {
+            for (int j = 0; j < level.Length(); j++)
+            {
+                if (level.GetElem(j) == destroyedObj)
+                {
+                    level.SetElem(j, null);
+
+                    currLevel = i;
+                    return;
+                }
+            }
+            i++;
+        }
     }
 
     public void DisplayUpgradeWindow(UpgradeMenu upgradeMenu)
@@ -77,7 +107,7 @@ public class BuildingUpgrade : MonoBehaviour
         }
 
         upgradeMenu.Display(buiCollision.GetMyBuildingname(), 
-                            myUpgradePath.GetSpritesFromCurentLevel(currLevel), 
+                            myUpgradePath.GetSpritesFromLevel(currLevel), 
                             levels[currLevel],
                             myUpgradePath.GetSuccessFromCurentLevel(currLevel), 
                             myUpgradePath.GetEnergyLossFromCurentLevel(currLevel));

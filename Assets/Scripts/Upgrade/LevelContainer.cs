@@ -11,6 +11,11 @@ public class LevelContainer : ScriptableObject
         elements = new GameObject[size];
     }
 
+    public int Length()
+    {
+        return elements.Length;
+    }
+
     public GameObject GetElem(int index)
     {
         return elements[index];

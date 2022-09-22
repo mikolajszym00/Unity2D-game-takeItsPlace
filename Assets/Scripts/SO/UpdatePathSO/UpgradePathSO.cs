@@ -18,7 +18,7 @@ public class UpgradePathSO : ScriptableObject
         return upgrades;
     }
 
-    public Sprite[] GetSpritesFromCurentLevel(int index)
+    public Sprite[] GetSpritesFromLevel(int index)
     {
         return upgrades[index].GetSprites();
     }
