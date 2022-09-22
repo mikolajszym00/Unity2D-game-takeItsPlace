@@ -15,5 +15,6 @@ MonoBehaviour:
   sprites:
   - {fileID: -187423546, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
   - {fileID: -187423546, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
+  - {fileID: -187423546, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
   energyLossDecrease: 4
-  probPercentageIncrease: 3
+  success: 10

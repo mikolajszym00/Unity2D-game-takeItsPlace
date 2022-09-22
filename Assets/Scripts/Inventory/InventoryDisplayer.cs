@@ -19,7 +19,6 @@ public class InventoryDisplayer : MonoBehaviour
 
         GameObject elem = elemIcon.transform.Find("Elem").gameObject;
         elem.GetComponent<Image>().sprite = sprite;
-
     }
 
     public void Remove(Sprite sprite)

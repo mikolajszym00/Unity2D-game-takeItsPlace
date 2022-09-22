@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1303d8970a4728840988aa8cca7a907d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buiCollision: {fileID: 1568050307081846981}
 --- !u!1 &4081497379542501946
 GameObject:
   m_ObjectHideFlags: 0

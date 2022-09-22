@@ -7,7 +7,7 @@ public class UpgradeSO : ScriptableObject
 {
     [SerializeField] Sprite[] sprites; 
     [SerializeField] int energyLossDecrease;
-    [SerializeField] int probPercentageIncrease;
+    [SerializeField] int success;
 
     public Sprite[] GetSprites()
     {
@@ -17,5 +17,15 @@ public class UpgradeSO : ScriptableObject
     public int GetSize()
     {
         return sprites.Length;
+    }
+
+    public int GetSuccess()
+    {
+        return success;
+    }
+
+    public int GetEnergyLoss()
+    {
+        return energyLossDecrease;
     }
 }

@@ -114,7 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3774bd8a29a5d74690ed6ebdb4067b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
 --- !u!1 &6366590113010607203
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +128,7 @@ GameObject:
   - component: {fileID: 6366590113010607206}
   - component: {fileID: 9209362108020770541}
   - component: {fileID: 617946794345819867}
+  - component: {fileID: 2650261878730221823}
   - component: {fileID: 7484182409700617254}
   - component: {fileID: 6458175865078181658}
   - component: {fileID: 6263620221357738271}
@@ -194,7 +194,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1199962231
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1166056392, guid: fa473b81055d4184eadb95a9ca622cb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -253,6 +253,9 @@ MonoBehaviour:
   movementDirection: {x: 0, y: 0}
   rb: {fileID: 7484182409700617254}
   anim: {fileID: 6263620221357738271}
+  energyCost: 0.003
+  atackEnergyCost: 10
+  slider: {fileID: 0}
 --- !u!114 &9209362108020770541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +285,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7484182409700617254}
+--- !u!114 &2650261878730221823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6366590113010607203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650afedc440376f46bf735c33d50301f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &7484182409700617254
 Rigidbody2D:
   serializedVersion: 4

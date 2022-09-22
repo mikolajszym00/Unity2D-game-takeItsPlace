@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BuildingUpgrade : MonoBehaviour
 {
+    [SerializeField] BuildingCollision buiCollision;
+
     UpgradePathSO myUpgradePath;
     (int, int) pathSize;
 
@@ -35,7 +37,7 @@ public class BuildingUpgrade : MonoBehaviour
 
     public void AddElemToCurrentLevel(Sprite newSprite, GameObject elem)
     {
-        if(levels.Length == currLevel) // został osiąngnięty maksymalny poziom
+        if (levels.Length == currLevel) // został osiąngnięty maksymalny poziom
             { return; }
 
         int i = 0;
@@ -49,12 +51,8 @@ public class BuildingUpgrade : MonoBehaviour
                     levels[currLevel].SetElem(i, elem);
 
                     if (levels[currLevel].levelCompleted())
-                    {
+                    {                        
                         currLevel++;
-                        Debug.Log(currLevel);
-                        Debug.Log(gameObject);
-                        // trzeba to jeszcze zdispleyowac lub dopiero po zmianie na człowika lub po
-                        // kliknięciu budynku
                     }
 
                     break;
@@ -68,5 +66,20 @@ public class BuildingUpgrade : MonoBehaviour
     public void RefreshCurrentLevel() // funkcja bedzie kazała odsiwieżyć display
     {
         // trzeba przeiterować wsztkei levele i spradzić który jest najwyższy
+    }
+
+    public void DisplayUpgradeWindow(UpgradeMenu upgradeMenu)
+    {
+        if (levels.Length == currLevel)
+        {
+            upgradeMenu.DisplayMaxLevelReached();
+            return;
+        }
+
+        upgradeMenu.Display(buiCollision.GetMyBuildingname(), 
+                            myUpgradePath.GetSpritesFromCurentLevel(currLevel), 
+                            levels[currLevel],
+                            myUpgradePath.GetSuccessFromCurentLevel(currLevel), 
+                            myUpgradePath.GetEnergyLossFromCurentLevel(currLevel));
     }
 }
