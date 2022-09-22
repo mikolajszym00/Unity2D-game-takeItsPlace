@@ -18,3 +18,4 @@ MonoBehaviour:
   prefabObj: {fileID: 4081497379279082160, guid: 6ce6b6102539eff419b6295aad779592, type: 3}
   type: building
   objectBoundariesRadius: 2.3
+  upgradePath: {fileID: 11400000, guid: a77623eafa508924f902e77c5f7e2d6c, type: 2}

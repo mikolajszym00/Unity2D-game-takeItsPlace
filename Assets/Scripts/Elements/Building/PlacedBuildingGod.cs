@@ -7,7 +7,7 @@ public class PlacedBuildingGod : MonoBehaviour
 {
     [SerializeField] GameObject godMode;
 
-    void OnClick()
+    void OnClick() // ma nie działać jeśli mamy item w ręce (item i tak nie zostanie położony na budynku)
     {
         if (!godMode.activeSelf) { return; }
 
@@ -15,7 +15,7 @@ public class PlacedBuildingGod : MonoBehaviour
 
         foreach (Transform building in transform)
         {
-            if (building.gameObject.GetComponent<BoxCollider2D>().bounds.Contains(mousePos))
+            if (building.gameObject.GetComponent<BoxCollider2D>().bounds.Contains(mousePos)) // zmienic na godinteraction
             {
                 Debug.Log("open upgrade window");
             }

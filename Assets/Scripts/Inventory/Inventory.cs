@@ -43,11 +43,13 @@ public class Inventory : MonoBehaviour
 
     public int GetItemQuantity(Sprite sprite)
     {
-        if (!ItemInventory.ContainsKey(sprite))
-        {
-            return 0;
-        }
+        return 100; //debug mode
 
-        return ItemInventory[sprite];
+        // if (!ItemInventory.ContainsKey(sprite))
+        // {
+        //     return 0;
+        // }
+
+        // return ItemInventory[sprite];
     }
 }

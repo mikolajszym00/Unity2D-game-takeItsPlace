@@ -26,6 +26,7 @@ public class BuildingUpgrade : MonoBehaviour
         int i = 0;
         foreach (UpgradeSO upgrade in myUpgradePath.GetUpgrades())
         {
+            levels[i] = ScriptableObject.CreateInstance("LevelContainer") as LevelContainer;
             levels[i].init(upgrade.GetSize());
 
             i++;
@@ -34,6 +35,9 @@ public class BuildingUpgrade : MonoBehaviour
 
     public void AddElemToCurrentLevel(Sprite newSprite, GameObject elem)
     {
+        if(levels.Length == currLevel) // został osiąngnięty maksymalny poziom
+            { return; }
+
         int i = 0;
         foreach (Sprite levelSprite in myUpgradePath.GetSpritesFromCurentLevel(currLevel))
         {
@@ -47,6 +51,8 @@ public class BuildingUpgrade : MonoBehaviour
                     if (levels[currLevel].levelCompleted())
                     {
                         currLevel++;
+                        Debug.Log(currLevel);
+                        Debug.Log(gameObject);
                         // trzeba to jeszcze zdispleyowac lub dopiero po zmianie na człowika lub po
                         // kliknięciu budynku
                     }

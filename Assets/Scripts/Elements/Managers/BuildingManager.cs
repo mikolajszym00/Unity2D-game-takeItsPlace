@@ -26,6 +26,9 @@ public class BuildingManager : ElemSetPointerManager
 
         Transform parent = transform.Find("Building Container").transform;
 
-        return Instantiate(myElem.GetPrefabObj(), base.GetMousePos(), Quaternion.identity, parent);
+        GameObject building = Instantiate(myElem.GetPrefabObj(), base.GetMousePos(), Quaternion.identity, parent);
+        building.GetComponent<BuildingUpgrade>().SetUpgradePath(myElem.GetUpgradePath());
+
+        return building; 
     }
 }
