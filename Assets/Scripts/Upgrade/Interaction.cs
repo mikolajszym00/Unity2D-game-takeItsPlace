@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GodInteraction : MonoBehaviour
+public class Interaction : MonoBehaviour
 {
     [SerializeField] SpriteRenderer sr;
 

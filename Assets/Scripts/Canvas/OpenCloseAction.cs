@@ -7,7 +7,7 @@ public class OpenCloseAction : MonoBehaviour
     [SerializeField] GameObject hiddenInv;
     [SerializeField] GameObject extendedInv;
 
-    public void OnButtonOpen() 
+    public void OnButtonOpen() // hero powinien być wyłączny na ten czas
     {
         hiddenInv.SetActive(false);
         extendedInv.SetActive(true);

@@ -8,7 +8,7 @@ public class MouseTrigger : MonoBehaviour
     {
         if (other.tag == "Upgrade Area")
         {
-            other.GetComponent<GodInteraction>().SetCircleVisability(true);
+            other.GetComponent<Interaction>().SetCircleVisability(true);
         }
     }
 
@@ -16,7 +16,7 @@ public class MouseTrigger : MonoBehaviour
     {
         if (other.tag == "Upgrade Area")
         {
-            other.GetComponent<GodInteraction>().SetCircleVisability(false);
+            other.GetComponent<Interaction>().SetCircleVisability(false);
         }
     }
 }
