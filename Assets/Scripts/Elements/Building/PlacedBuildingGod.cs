@@ -9,19 +9,20 @@ public class PlacedBuildingGod : MonoBehaviour
     [SerializeField] UpgradeMenu upgradeMenu;
 
     [SerializeField] GameObject buiCanvas;
+    [SerializeField] GameObject buttonPanel;
 
     bool upgradeWindowOpened = false;
 
     void OnClick() // co jeśli zmienimy tryby
     {
-        if (!godMode.activeSelf || upgradeWindowOpened) 
+        if (!godMode.activeSelf || upgradeWindowOpened) // można naraz kliknąć upgrade i button panel
         { return; }
 
         Vector3 mousePos = GetMousePos();
 
         foreach (Transform building in transform)
         {
-            if (building.gameObject.GetComponent<BoxCollider2D>().bounds.Contains(mousePos)) // zmienic na interaction
+            if (building.gameObject.GetComponent<BoxCollider2D>().bounds.Contains(mousePos))
             {
                 buiCanvas.SetActive(true); 
                 building.gameObject.GetComponent<BuildingUpgrade>().DisplayUpgradeWindow(upgradeMenu);
@@ -36,7 +37,7 @@ public class PlacedBuildingGod : MonoBehaviour
     {
         foreach (Transform building in transform)
         {
-            if (building.Find("Object Upgrade Area").gameObject.GetComponent<CircleCollider2D>().bounds.Contains(mousePos))
+            if (building.Find("Object Upgrade Area").gameObject.GetComponent<CircleCollider2D>().bounds.Contains(mousePos)) // czy ma być w tym tile
             {
                 building.gameObject.GetComponent<BuildingUpgrade>().AddElemToCurrentLevel(sprite, elem);
             }

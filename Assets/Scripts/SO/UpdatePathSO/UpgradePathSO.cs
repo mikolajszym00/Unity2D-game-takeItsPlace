@@ -23,6 +23,11 @@ public class UpgradePathSO : ScriptableObject
         return upgrades[index].GetSprites();
     }
 
+    public int[] GetSpritesQuantitiesFromLevel(int index)
+    {
+        return upgrades[index].GetSpritesQuantities();
+    }
+
     public int GetSuccessFromCurentLevel(int index)
     {
         return upgrades[index].GetSuccess();

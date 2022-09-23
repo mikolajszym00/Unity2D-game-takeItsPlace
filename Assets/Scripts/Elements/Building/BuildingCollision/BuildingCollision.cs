@@ -9,8 +9,7 @@ public abstract class BuildingCollision : MonoBehaviour
     [SerializeField] protected Sprite[] product;
     [SerializeField] protected String buildingname;
 
-    [SerializeField] protected GameObject upgradeArea;
-    Interaction interaction;
+    [SerializeField] protected BuildingUpgrade buildingUpgrade;
 
     protected GameObject buildingCont;
     protected PlacedBuildingHuman placedBuilding;
@@ -21,8 +20,6 @@ public abstract class BuildingCollision : MonoBehaviour
     {
         buildingCont = transform.parent.gameObject;
         placedBuilding = buildingCont.GetComponent<PlacedBuildingHuman>();
-
-        interaction = upgradeArea.GetComponent<Interaction>();
     }
 
     void OnTriggerEnter2D(Collider2D other) 
@@ -32,8 +29,7 @@ public abstract class BuildingCollision : MonoBehaviour
             placedBuilding.SetStandByTheBui(true);
             placedBuilding.SetBuilding(gameObject);
 
-            interaction.SetCircleVisability(true); //tu odwołać się do building upgrade i przeiterować wszystkie
-            // elementy które należą do upgradu i włączyć ich widoczność. Nie włączać widoczności dużego koła (bo po co)
+            buildingUpgrade.SetElementsVisability(true);
         }
     }
     
@@ -43,7 +39,7 @@ public abstract class BuildingCollision : MonoBehaviour
         {
             placedBuilding.SetStandByTheBui(false);
 
-            interaction.SetCircleVisability(false);
+            buildingUpgrade.SetElementsVisability(false);
         }
     }
 

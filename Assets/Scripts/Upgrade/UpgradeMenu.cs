@@ -15,10 +15,15 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] GameObject energyLossObj;
     [SerializeField] GameObject energyLossValue;
 
-    public void Display(String buildingName, Sprite[] requiredSprites, LevelContainer accomplishedSprites, int success, int energyLoss)
+    public void Display(String buildingName, 
+                        Sprite[] requiredSprites, 
+                        int[] spritesQuantities, 
+                        Dictionary<Sprite, int> spritesInCurrLevel, 
+                        int success, 
+                        int energyLoss)
     {
         SetName(buildingName);
-        upgradeDisplayer.SetRequired(requiredSprites, accomplishedSprites);
+        upgradeDisplayer.SetRequired(requiredSprites, spritesQuantities, spritesInCurrLevel);
         SetBenefits(success, energyLoss);
     }
 
@@ -47,7 +52,7 @@ public class UpgradeMenu : MonoBehaviour
             energyLossObj.SetActive(false); // trzeba włączyć podczas zamykania
         } else 
         {
-            energyLossValue.GetComponent<TextMeshProUGUI>().text = "-" + energyLoss.ToString();
+            energyLossValue.GetComponent<TextMeshProUGUI>().text = energyLoss.ToString();
         }
     }
 

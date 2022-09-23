@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: -187423546, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
-  - {fileID: -187423546, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
-  - {fileID: -187423546, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
+  spritesQuantities: 03000000
   energyLossDecrease: 4
   success: 10

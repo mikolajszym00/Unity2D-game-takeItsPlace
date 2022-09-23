@@ -8,7 +8,7 @@ public class Deactivation : MonoBehaviour
     Animator heroAnimator;
     [SerializeField] GameObject handAction;
 
-    void Start()
+    void Awake()
     {
         heroMovement = gameObject.GetComponent<HeroMovement>();
         heroAnimator = gameObject.GetComponent<Animator>();

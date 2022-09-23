@@ -69,13 +69,13 @@ public class PlacedBuildingHuman : MonoBehaviour
         DeactivateTrade(); 
     }
 
-    public void checkDowngrades(GameObject destroyedObj, Vector3 mousePos) 
+    public void checkDowngrades(GameObject destroyedObj, Sprite destroyedSprite, Vector3 mousePos) 
     {
         foreach (Transform building in transform)
         {
             if (building.Find("Object Upgrade Area").gameObject.GetComponent<CircleCollider2D>().bounds.Contains(mousePos))
             {
-                building.gameObject.GetComponent<BuildingUpgrade>().RefreshCurrentLevel(destroyedObj, upgradeMenu);
+                building.gameObject.GetComponent<BuildingUpgrade>().RefreshCurrentLevel(destroyedObj, destroyedSprite);
             }
         }
     }

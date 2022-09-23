@@ -172,7 +172,7 @@ MonoBehaviour:
   product:
   - {fileID: 1532611934, guid: f015eef69d5771c419b43ce3e00c76e5, type: 3}
   buildingname: Stoncutter
-  upgradeArea: {fileID: 4559994468575473909}
+  buildingUpgrade: {fileID: 3159915897709050718}
 --- !u!114 &3159915897709050718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,11 +485,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07bebe3a37c5c6c4c8bc21d7a4c0136e, type: 3}
---- !u!1 &4559994468575473909 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8016311270037349202, guid: 07bebe3a37c5c6c4c8bc21d7a4c0136e, type: 3}
-  m_PrefabInstance: {fileID: 5798369606345593767}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8386343174620099727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2600183099445094184, guid: 07bebe3a37c5c6c4c8bc21d7a4c0136e, type: 3}

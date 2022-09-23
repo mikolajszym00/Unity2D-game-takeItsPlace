@@ -74,7 +74,7 @@ public class ItemAct : MonoBehaviour
 
         if (durability <= 0) {
             inventory.AddToInventory(drop, loot);
-            placedBuildingHuman.checkDowngrades(gameObject, position);
+            placedBuildingHuman.checkDowngrades(gameObject, mySpriteRenderer.sprite, position);
 
             Destroy(gameObject);
         }

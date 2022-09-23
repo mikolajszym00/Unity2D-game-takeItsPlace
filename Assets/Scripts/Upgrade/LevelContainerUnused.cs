@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelContainer : ScriptableObject
+public class LevelContainerUnused : ScriptableObject
 {
     GameObject[] elements;
 

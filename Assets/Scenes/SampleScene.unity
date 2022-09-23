@@ -14868,6 +14868,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 964769290}
     - target: {fileID: 6956313922470822505, guid: fd72acf29aa33ec47a2fd97715f0a6dc, type: 3}
+      propertyPath: buttonPanel
+      value: 
+      objectReference: {fileID: 762584973}
+    - target: {fileID: 6956313922470822505, guid: fd72acf29aa33ec47a2fd97715f0a6dc, type: 3}
       propertyPath: upgradeMenu
       value: 
       objectReference: {fileID: 635528300}

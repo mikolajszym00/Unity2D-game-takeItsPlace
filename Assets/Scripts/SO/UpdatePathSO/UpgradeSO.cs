@@ -6,12 +6,18 @@ using UnityEngine;
 public class UpgradeSO : ScriptableObject
 {
     [SerializeField] Sprite[] sprites; 
+    [SerializeField] int[] spritesQuantities;
     [SerializeField] int energyLossDecrease;
     [SerializeField] int success;
-
+    
     public Sprite[] GetSprites()
     {
         return sprites;
+    }
+
+    public int[] GetSpritesQuantities()
+    {
+        return spritesQuantities;
     }
 
     public int GetSize()
