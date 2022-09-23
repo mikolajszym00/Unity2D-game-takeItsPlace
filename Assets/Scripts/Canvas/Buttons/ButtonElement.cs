@@ -4,14 +4,5 @@ using UnityEngine;
 
 public abstract class ButtonElement : MonoBehaviour
 {
-    [SerializeField] protected ElemSO myElem;
-
-    public void SetMyElem(ElemSO newElem) {
-        myElem = newElem;
-    }
-
-    public ElemSO GetMyElem() {
-        return myElem;
-    }
-
+    public abstract ElemSO GetMyElem();
 }

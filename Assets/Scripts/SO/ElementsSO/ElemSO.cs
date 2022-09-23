@@ -5,23 +5,9 @@ using UnityEngine;
 
 public abstract class ElemSO : ScriptableObject
 {
-    [SerializeField] int godPrice;
-    [SerializeField] int humanPrice;
-    [SerializeField] Sprite mySprite; // do usunięcia
-
-    [SerializeField] GameObject prefabObj;
-
     [SerializeField] String type;
-
-    public int GetGodPrice()
-    {
-        return godPrice;
-    }
-
-    public int GetHumanPrice()
-    {
-        return humanPrice;
-    }
+    [SerializeField] Sprite sprite;
+    [SerializeField] GameObject prefabObj;
 
     public String GetElemType()
     {
@@ -30,14 +16,11 @@ public abstract class ElemSO : ScriptableObject
 
     public Sprite GetSprite()
     {
-        return mySprite;
+        return sprite;
     }
 
     public GameObject GetPrefabObj()
     {
         return prefabObj;
     }
-
-
-
 }

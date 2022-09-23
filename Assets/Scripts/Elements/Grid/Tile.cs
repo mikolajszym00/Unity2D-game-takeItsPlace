@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     [SerializeField] BoxCollider2D bc;
-    [SerializeField] SpriteRenderer sr;
+    [SerializeField] GameObject highlight;
     
     GameObject gridManagerObj;
     GridManager gridManager;
@@ -22,6 +22,7 @@ public class Tile : MonoBehaviour
         transform.gameObject.tag = "CoveredTile";
         GetComponent<SpriteRenderer>().sprite = mySprite;
         DeactivateCollision();
+        DeactivateHighlight();
 
         if (setParent) { transform.SetParent(gridManager.GetCoveredParent()); }
     }
@@ -38,11 +39,11 @@ public class Tile : MonoBehaviour
 
     public void ActivateHighlight()
     {
-        sr.enabled = true;
+        highlight.SetActive(true);
     }
 
     public void DeactivateHighlight()
     {
-        sr.enabled = false;
+        highlight.SetActive(false);
     }
 }

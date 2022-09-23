@@ -91,6 +91,7 @@ public class GridManager : ElementManager
             {
                 Tile tile = Instantiate(tilePrefab, new Vector3 (coord.i, coord.j), Quaternion.identity, baredParent.transform);
                 tile.ActivateCollision();
+                tile.ActivateHighlight();
             }
 
             isCovered = false;

@@ -5,4 +5,10 @@ using UnityEngine;
 
 public class ButtonBuilding : ButtonElement
 {
+
+    [SerializeField] protected BuildingSO myBuilding;
+
+    public override ElemSO GetMyElem() {
+        return myBuilding;
+    }
 }

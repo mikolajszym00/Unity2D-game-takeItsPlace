@@ -161,8 +161,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1261048822, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
-  m_Color: {r: 0.9150943, g: 0.012949424, b: 0.012949424, a: 1}
+  m_Sprite: {fileID: -687975909, guid: 55c538e86917a554ba978f3b14024d75, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -189,7 +189,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -219,11 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initDurability: 3
-  durability: 0
   loot: 2
   drop: {fileID: 477124682, guid: f015eef69d5771c419b43ce3e00c76e5, type: 3}
-  hand: {fileID: 0}
-  heroCollision: 0
 --- !u!1001 &8337473386136296525
 PrefabInstance:
   m_ObjectHideFlags: 0

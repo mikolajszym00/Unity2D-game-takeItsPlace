@@ -27,7 +27,7 @@ public class ProductionMenu : Menu
         productsDisplayer.SetProducts(products);
     }
 
-    public void OnProduceClick() //zmienić kolory produktow
+    public void OnProduceClick()
     {
         if (!CanAffordTo()) { return; }
 
@@ -71,7 +71,7 @@ public class ProductionMenu : Menu
         int i = 0;
         foreach (Sprite product in products)
         {
-            inventory.AddToInventory(product, 1); // dodać p-stwo niepowodzenia
+            inventory.AddToInventory(product, 1); // dodać p-stwo niepowodzenia, zmienić kolory produktow (sukces, porażka)
 
             i++;
         }

@@ -1255,6 +1255,10 @@ PrefabInstance:
       propertyPath: myElem
       value: 
       objectReference: {fileID: 11400000, guid: 992f67d0691bea8428bec5676bf2cd40, type: 2}
+    - target: {fileID: 1495198364536837844, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
+      propertyPath: godElem
+      value: 
+      objectReference: {fileID: 11400000, guid: 23bb24cacae76d64f999a178614b2a12, type: 2}
     - target: {fileID: 1501393544235675965, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1651,6 +1655,10 @@ PrefabInstance:
       propertyPath: myElem
       value: 
       objectReference: {fileID: 11400000, guid: de6cca03b5710c24c859a4ff2a3a7314, type: 2}
+    - target: {fileID: 1495198364536837844, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
+      propertyPath: godElem
+      value: 
+      objectReference: {fileID: 11400000, guid: 79282986f0a024f4b8161459d4a7d5ed, type: 2}
     - target: {fileID: 1501393544235675965, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5148,7 +5156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835ff561180993846ac277973360de88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myElem: {fileID: 11400000, guid: 90f2fd60de52cc14f940e8687a832434, type: 2}
+  myBuilding: {fileID: 11400000, guid: 90f2fd60de52cc14f940e8687a832434, type: 2}
 --- !u!114 &670272715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6714,6 +6722,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1495198364536837844, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
+      propertyPath: godElem
+      value: 
+      objectReference: {fileID: 11400000, guid: d115a365e1de0354b91b4cab444a0bcc, type: 2}
     - target: {fileID: 1501393544235675965, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7669,7 +7681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835ff561180993846ac277973360de88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myElem: {fileID: 11400000, guid: 8ba9b3a97108e374ab50b42e5e75c25b, type: 2}
+  myBuilding: {fileID: 11400000, guid: 8ba9b3a97108e374ab50b42e5e75c25b, type: 2}
 --- !u!1 &1077447710
 GameObject:
   m_ObjectHideFlags: 0
@@ -9915,6 +9927,10 @@ PrefabInstance:
       propertyPath: myElem
       value: 
       objectReference: {fileID: 11400000, guid: 66abdf9dc634546428fc27314ca558a5, type: 2}
+    - target: {fileID: 1495198364536837844, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
+      propertyPath: godElem
+      value: 
+      objectReference: {fileID: 11400000, guid: c13e9bce26d736646a06b8e9924cc4f5, type: 2}
     - target: {fileID: 1501393544235675965, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9938,6 +9954,18 @@ PrefabInstance:
     - target: {fileID: 1952124759105624669, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952124759105624669, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952124759105624669, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952124759105624669, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1952124759105624669, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -12463,6 +12491,10 @@ PrefabInstance:
       propertyPath: myElem
       value: 
       objectReference: {fileID: 11400000, guid: 12dc6309ee2e1b04aa74576131d36f29, type: 2}
+    - target: {fileID: 1495198364536837844, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
+      propertyPath: godElem
+      value: 
+      objectReference: {fileID: 11400000, guid: d115a365e1de0354b91b4cab444a0bcc, type: 2}
     - target: {fileID: 1501393544235675965, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12865,6 +12897,10 @@ PrefabInstance:
       propertyPath: myElem
       value: 
       objectReference: {fileID: 11400000, guid: 4ba25701d88a2d04da6698602c70273d, type: 2}
+    - target: {fileID: 1495198364536837844, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
+      propertyPath: godElem
+      value: 
+      objectReference: {fileID: 11400000, guid: d115a365e1de0354b91b4cab444a0bcc, type: 2}
     - target: {fileID: 1501393544235675965, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -13096,7 +13132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835ff561180993846ac277973360de88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myElem: {fileID: 11400000, guid: 5d7c517ceda94944ca89f1c0f9d2729f, type: 2}
+  myBuilding: {fileID: 11400000, guid: 5d7c517ceda94944ca89f1c0f9d2729f, type: 2}
 --- !u!224 &1876732223 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4284737618343010619, guid: 776f1bb14d080a04cbba2251fdfa5c29, type: 3}
@@ -14624,6 +14660,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4730837443602582348, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5628785798426322636, guid: f0ebc94ba006e6d4983f0c7d21b4f2c8, type: 3}
       propertyPath: fortuneObj
       value: 
@@ -14786,6 +14826,10 @@ PrefabInstance:
       propertyPath: hero
       value: 
       objectReference: {fileID: 2039573598}
+    - target: {fileID: 4127870500065439734, guid: fd72acf29aa33ec47a2fd97715f0a6dc, type: 3}
+      propertyPath: mySprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 006a830863a8f2f45bf036c8303e6c08, type: 3}
     - target: {fileID: 6241596549681318410, guid: fd72acf29aa33ec47a2fd97715f0a6dc, type: 3}
       propertyPath: m_Sprite
       value: 

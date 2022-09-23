@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9607844, g: 0.9607844, b: 0.9607844, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -175,7 +175,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -359,7 +359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060be4a394d5a994384add9d74a0e6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myElem: {fileID: 11400000, guid: 1f5dcae1293cd3d428de18f70029f131, type: 2}
+  godElem: {fileID: 11400000, guid: 21a5289f0afe47044b33a069ef413a61, type: 2}
+  giftPrc: {fileID: 8403268902424903988}
+  prayPrc: {fileID: 8882990127223248458}
 --- !u!114 &5628785798426322636
 MonoBehaviour:
   m_ObjectHideFlags: 0

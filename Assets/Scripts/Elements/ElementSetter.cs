@@ -17,6 +17,8 @@ public class ElementSetter : MonoBehaviour
     [SerializeField] ElementManager tileManager;
     [SerializeField] ElementManager buildingManager;
 
+    // Dictionary<String, ElementManager> 
+
     ElementManager manager;
 
     [SerializeField] GameObject buildingContainer;
@@ -66,7 +68,7 @@ public class ElementSetter : MonoBehaviour
         GetComponent<PlayerInput>().DeactivateInput();
         placedBuildingGod.GetComponent<PlayerInput>().ActivateInput();
 
-        buttonPanel.SetActive(true);
+        buttonPanel.SetActive(true); // chyba nie powinno tu byc
     }
 
     Vector3 GetMousePos()

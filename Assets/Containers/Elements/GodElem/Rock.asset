@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c3fccb95b14744c878389faabb3e51, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e1b5704dd4fb4b4f87129cbba6ff621, type: 3}
   m_Name: Rock
   m_EditorClassIdentifier: 
-  godPrice: 6
-  humanPrice: 1
-  mySprite: {fileID: -1817324446, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
-  prefabObj: {fileID: 315258945576123649, guid: bbd206e46ff42f943a81971a47a3fa9a, type: 3}
   type: item
-  objectBoundariesRadius: 0
+  sprite: {fileID: -1817324446, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
+  prefabObj: {fileID: 315258945576123649, guid: bbd206e46ff42f943a81971a47a3fa9a, type: 3}
+  giftPrice: 1
+  prayPrice: 1
+  iconSize: 0.7

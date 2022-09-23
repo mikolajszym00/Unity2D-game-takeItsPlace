@@ -5,13 +5,13 @@ using UnityEngine;
 public class ItemAct : MonoBehaviour
 {
     [SerializeField] float initDurability = 5f;
-    [SerializeField] float durability;
+    float durability;
 
     [SerializeField] int loot = 2; // mozna dodac randomozowanie
     [SerializeField] Sprite drop;
 
-    [SerializeField] GameObject hand;
-    [SerializeField] bool heroCollision = false;
+    GameObject hand;
+    bool heroCollision = false;
 
     SpriteRenderer mySpriteRenderer;
 

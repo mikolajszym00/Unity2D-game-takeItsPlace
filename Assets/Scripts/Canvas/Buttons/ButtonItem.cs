@@ -6,28 +6,31 @@ using TMPro;
 
 public class ButtonItem : ButtonElement
 {
+    [SerializeField] GodElemSO godElem;
+
+    [SerializeField] GameObject giftPrc;
+    [SerializeField] GameObject prayPrc;
+
     void Start()
     {
-        DisplayItem();
+        DisplayElem();
     }
 
-    void DisplayItem() // przyda się do podmiany Elemu
+    void DisplayElem()
     {
-        GameObject image = transform.Find("Image").gameObject;
-        // Debug.Log(image.GetType().ToString());
-        image.GetComponent<Image>().sprite = myElem.GetSprite();
-        // Debug.Log(image.GetComponent<Image>().GetType().ToString());
+        Transform image = transform.Find("Image");
 
-        GameObject price = transform.Find("Price").gameObject;
+        float size = godElem.GetIconSize();
+        image.localScale = new Vector3(size, size, size);
 
-        GameObject humanPrc = price.transform.Find("PrayPrc").gameObject;
+        image.gameObject.GetComponent<Image>().sprite = godElem.GetSprite();
         
-        humanPrc.GetComponent<TextMeshProUGUI>().text = myElem.GetHumanPrice().ToString();
-
-        GameObject godPrc = price.transform.Find("GiftPrc").gameObject;
-        godPrc.GetComponent<TextMeshProUGUI>().text = myElem.GetGodPrice().ToString();
+        giftPrc.GetComponent<TextMeshProUGUI>().text = godElem.GetGiftPrice().ToString();
+        prayPrc.GetComponent<TextMeshProUGUI>().text = godElem.GetPrayPrice().ToString();
     }
 
-
-
+    public override ElemSO GetMyElem() 
+    {
+        return godElem;
+    }
 }

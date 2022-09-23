@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a8cdd6fbf403e4bb66d0d9b63814f3, type: 3}
   m_Name: Stump
   m_EditorClassIdentifier: 
-  godPrice: 2
-  humanPrice: 3
-  mySprite: {fileID: 21300000, guid: 15072df1de235d845bd122d8dda26b46, type: 3}
-  prefabObj: {fileID: 6288650295490383372, guid: 79ef855141012b84f81f78ec1fa962b2, type: 3}
   type: building
-  objectBoundariesRadius: 3.5
-  upgradePath: {fileID: 11400000, guid: a77623eafa508924f902e77c5f7e2d6c, type: 2}
+  sprite: {fileID: 21300000, guid: 15072df1de235d845bd122d8dda26b46, type: 3}
+  prefabObj: {fileID: 6288650295490383372, guid: 79ef855141012b84f81f78ec1fa962b2, type: 3}
+  upgradePath: {fileID: 11400000, guid: b3eaa94b74df0d44b99e615c080b6aaf, type: 2}
