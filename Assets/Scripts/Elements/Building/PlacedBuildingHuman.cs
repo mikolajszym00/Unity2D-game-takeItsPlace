@@ -8,21 +8,16 @@ public class PlacedBuildingHuman : MonoBehaviour
     [SerializeField] GameObject humanMode;
 
     [SerializeField] GameObject buiCanvas;
-    GameObject tradeMenu;
+    [SerializeField] ProductionMenu productionMenu;
 
     bool standByTheBui = false;
 
     GameObject buildingObj;
-    BuildingCollision building;
+    BuildingProduction buildingProduction;
 
     [SerializeField] UpgradeMenu upgradeMenu;
 
     [SerializeField] GameObject hero;
-
-    void Start()
-    {
-        tradeMenu = buiCanvas.transform.Find("Trade Menu").gameObject;
-    }
 
     void OnEnter()
     {
@@ -31,14 +26,14 @@ public class PlacedBuildingHuman : MonoBehaviour
         // po wyłączeniu lub trajdzie wymaga kliknięcia myszy żeby dziłało 
 
         DeactivateOtherInputs();
+
+        buildingProduction = buildingObj.GetComponent<BuildingProduction>();
+        productionMenu.Display(buildingProduction.GetMyBuildingname(), 
+                               buildingProduction.GetMyComponents(), 
+                               buildingProduction.GetMyComponentsQuantities(),
+                               buildingProduction.GetMyProducts());
+
         buiCanvas.SetActive(true);
-
-        building = buildingObj.GetComponent<BuildingCollision>();
-
-        tradeMenu.GetComponent<TradeHandler>().InitValues(building.GetMyBuildingname(), 
-                                                          building.GetMyComponent(),
-                                                          building.GetMyProduct());
-        tradeMenu.GetComponent<TradeHandler>().SetSlider();
     }
 
     public void SetStandByTheBui(bool newState)
@@ -57,16 +52,13 @@ public class PlacedBuildingHuman : MonoBehaviour
         hero.SetActive(false);
     }
 
-    public void DeactivateTrade()
+    public void OnCloseClick()
     {
         standByTheBui = true; 
         buiCanvas.SetActive(false);
         hero.SetActive(true);
-    }
 
-    public void OnCloseClick()
-    {
-        DeactivateTrade(); 
+        productionMenu.ClearProduction();
     }
 
     public void checkDowngrades(GameObject destroyedObj, Sprite destroyedSprite, Vector3 mousePos) 

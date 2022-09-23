@@ -49,7 +49,7 @@ public class PlacedBuildingGod : MonoBehaviour
         upgradeMenu.GetSuccessObj().SetActive(true);
         upgradeMenu.GetEnergyLossObj().SetActive(true);
 
-        upgradeMenu.GetUpgradeDisplayer().DestroyRequired();
+        upgradeMenu.GetUpgradeDisplayer().DestroyIcons();
 
         buiCanvas.SetActive(false);
         upgradeWindowOpened = false;

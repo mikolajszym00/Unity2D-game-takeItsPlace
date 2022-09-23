@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UpgradeMenu : MonoBehaviour
+public class UpgradeMenu : Menu
 {
     [SerializeField] UpgradeDisplayer upgradeDisplayer;
 
@@ -30,11 +30,6 @@ public class UpgradeMenu : MonoBehaviour
     public void DisplayMaxLevelReached()
     {
         SetName("Max Level");
-    }
-
-    void SetName(string buildingName)
-    {
-        transform.Find("Name").GetComponent<TextMeshProUGUI>().text = buildingName;
     }
 
     void SetBenefits(int success, int energyLoss)

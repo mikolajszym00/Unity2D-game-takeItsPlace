@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpgradeDisplayer : MonoBehaviour
+public class UpgradeDisplayer : IconDisplayer
 {
-    [SerializeField] GameObject elemIconPrefab;
-
     public void SetRequired(Sprite[] requiredSprites, int[] spritesQuantities, Dictionary<Sprite, int> spritesInCurrLevel)
     {
         int i = 0;
@@ -15,27 +13,21 @@ public class UpgradeDisplayer : MonoBehaviour
             for (int j = 0; j < spritesQuantities[i]; j++)
             {
                 GameObject elemIcon = Instantiate(elemIconPrefab, transform);
+                ElemIconHandler elemIconHandler = elemIcon.GetComponent<ElemIconHandler>();
 
-                GameObject elem = elemIcon.transform.Find("Elem").gameObject;
-                elem.GetComponent<Image>().sprite = sprite;
+
+                elemIconHandler.SetName(sprite);
+                elemIconHandler.SetQuantity(1);
 
                 if (spritesInCurrLevel.ContainsKey(sprite) && spritesInCurrLevel[sprite] >= 1 + j)
                 {
-                    elemIcon.GetComponent<Image>().color = new Color32(0, 255, 0, 100);
+                    elemIconHandler.ApprovedColor(true);
                 } else
                 {
-                    elemIcon.GetComponent<Image>().color = new Color32(255, 0, 0, 100);
+                    elemIconHandler.ApprovedColor(false);
                 }
             }
             i++;
-        }
-    }
-
-    public void DestroyRequired()
-    {
-        foreach (Transform icon in transform)
-        {
-            Destroy(icon.gameObject);
         }
     }
 }

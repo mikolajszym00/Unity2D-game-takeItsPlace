@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InventoryDisplayer : MonoBehaviour
+public class InventoryDisplayer : MonoBehaviour // mozna zmienic na icondisplayer
 {
     [SerializeField] GameObject elemIconPrefab;
 

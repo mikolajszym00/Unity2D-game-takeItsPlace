@@ -5,16 +5,10 @@ using UnityEngine;
 
 public abstract class BuildingCollision : MonoBehaviour
 {
-    [SerializeField] protected Sprite[] component;
-    [SerializeField] protected Sprite[] product;
-    [SerializeField] protected String buildingname;
-
     [SerializeField] protected BuildingUpgrade buildingUpgrade;
 
     protected GameObject buildingCont;
     protected PlacedBuildingHuman placedBuilding;
-
-    protected GameObject tradeMenu;
 
     protected virtual void Start()
     {
@@ -41,20 +35,5 @@ public abstract class BuildingCollision : MonoBehaviour
 
             buildingUpgrade.SetElementsVisability(false);
         }
-    }
-
-    public Sprite[] GetMyComponent()
-    {
-        return component;
-    }
-
-    public Sprite[] GetMyProduct()
-    {
-        return product;
-    }
-
-    public String GetMyBuildingname()
-    {
-        return buildingname;
     }
 }
