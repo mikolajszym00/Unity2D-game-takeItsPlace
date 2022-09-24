@@ -8,7 +8,7 @@ public class PlacedBuildingHuman : MonoBehaviour
     [SerializeField] GameObject humanMode;
 
     [SerializeField] GameObject buiCanvas;
-    [SerializeField] ProductionMenu productionMenu;
+    [SerializeField] HumanMenu menu; // teraz jest ustawione na production menu
 
     bool standByTheBui = false;
 
@@ -19,7 +19,7 @@ public class PlacedBuildingHuman : MonoBehaviour
 
     [SerializeField] GameObject hero;
 
-    void OnEnter()
+    void OnEnter() // co jesli położy się dwa budynki blisko siebie i kliknie enter (chyba nic bo standbythebui)
     {
         if (!(standByTheBui && humanMode.activeSelf)) { return; }
 
@@ -27,7 +27,7 @@ public class PlacedBuildingHuman : MonoBehaviour
 
         DeactivateOtherInputs();
 
-        productionMenu.Display(buildingObj.GetComponent<BuildingProduction>(), buildingObj.GetComponent<BuildingUpgrade>());
+        menu.Display(buildingObj.GetComponent<BuildingFeature>(), buildingObj.GetComponent<BuildingUpgrade>()); // czy on bede w stanie znaleźć buildingFeature
 
         buiCanvas.SetActive(true);
     }
@@ -54,7 +54,7 @@ public class PlacedBuildingHuman : MonoBehaviour
         buiCanvas.SetActive(false);
         hero.SetActive(true);
 
-        productionMenu.ClearProduction();
+        menu.ClearProduction();
     }
 
     public void checkDowngrades(GameObject destroyedObj, Sprite destroyedSprite, Vector3 mousePos) 

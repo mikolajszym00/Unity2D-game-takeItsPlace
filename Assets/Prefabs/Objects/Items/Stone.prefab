@@ -116,10 +116,10 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.65}
     oldSize: {x: 0.9375, y: 0.9375}
     newSize: {x: 0.85, y: 0.85}
     adaptiveTilingThreshold: 0.5
@@ -151,9 +151,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Object Highlight
       objectReference: {fileID: 0}
+    - target: {fileID: 4047817220400907284, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4992214923611374482, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7332156375658942773, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
       propertyPath: m_Enabled
@@ -173,11 +177,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8288488295518421102, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8288488295518421102, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.34
+      value: -0.462
       objectReference: {fileID: 0}
     - target: {fileID: 8288488295518421102, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
       propertyPath: m_LocalPosition.z
@@ -231,11 +235,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3045441150905314845, guid: fb721a2fa0bd84743b727d44d9d262b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.028
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3045441150905314845, guid: fb721a2fa0bd84743b727d44d9d262b7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3045441150905314845, guid: fb721a2fa0bd84743b727d44d9d262b7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -287,6 +291,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9078169127831983339, guid: fb721a2fa0bd84743b727d44d9d262b7, type: 3}
       propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078169127831983339, guid: fb721a2fa0bd84743b727d44d9d262b7, type: 3}
+      propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

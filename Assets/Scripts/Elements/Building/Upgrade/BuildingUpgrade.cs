@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BuildingUpgrade : MonoBehaviour
 {
-    [SerializeField] BuildingProduction buildingProduction;
+    [SerializeField] BuildingFeature buildingFeature;
 
     UpgradePathSO myUpgradePath;
     (int, int) pathSize;
@@ -146,7 +146,7 @@ public class BuildingUpgrade : MonoBehaviour
             return;
         }
 
-        upgradeMenu.Display(buildingProduction.buildingName, 
+        upgradeMenu.Display(buildingFeature.buildingName, 
                             myUpgradePath.GetSpritesFromLevel(currLevel), 
                             myUpgradePath.GetSpritesQuantitiesFromLevel(currLevel),
                             spritesInCurrLevel,

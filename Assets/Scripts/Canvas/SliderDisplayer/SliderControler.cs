@@ -32,18 +32,18 @@ public class SliderControler : MonoBehaviour
 
     public void ChangeValue(float value)
     {
-        if (slider.value + value >= 100f)
-        {
-            slider.value = 100;
-        } else {
-            if (slider.value + value <= 0)
-            {
-                Debug.Log("coś osiągnęło 0"); // ma popchnąć informację do dziecka
-                slider.value = 0;
-            } else {
-                slider.value += value;
-            }
-        }
+        // if (slider.value + value >= 100f) // debug mode
+        // {
+        //     slider.value = 100;
+        // } else {
+        //     if (slider.value + value <= 0)
+        //     {
+        //         Debug.Log("coś osiągnęło 0"); // ma popchnąć informację do dziecka
+        //         slider.value = 0;
+        //     } else {
+        //         slider.value += value;
+        //     }
+        // }
 
         DisplayNewValue();
     }

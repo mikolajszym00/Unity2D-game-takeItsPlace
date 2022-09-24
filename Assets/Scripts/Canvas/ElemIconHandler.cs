@@ -6,7 +6,6 @@ using TMPro;
 
 public class ElemIconHandler : MonoBehaviour
 {
-
     [SerializeField] GameObject stockValue;
     [SerializeField] GameObject stockBG;
 

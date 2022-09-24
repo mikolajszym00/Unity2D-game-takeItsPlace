@@ -6,7 +6,6 @@ public class ProductsDisplayer : IconDisplayer
 {
     public void SetProducts(Sprite[] sprites)
     {
-        int i = 0;
         foreach (Sprite sprite in sprites)
         {
             GameObject elemIcon = Instantiate(elemIconPrefab, transform);
@@ -16,8 +15,6 @@ public class ProductsDisplayer : IconDisplayer
 
             elemIconHandler.SetName(sprite);
             elemIconHandler.SetQuantity(1);
-            
-            i++; 
         }
     }
 

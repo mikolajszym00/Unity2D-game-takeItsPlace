@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ProductionMenu : Menu
+public class ProductionMenu : HumanMenu
 {    
     [SerializeField] HeroVitality vitality;
 
@@ -14,8 +14,6 @@ public class ProductionMenu : Menu
 
     [SerializeField] ComponentsDisplayer componentsDisplayer;
     [SerializeField] ProductsDisplayer productsDisplayer;
-    
-    [SerializeField] Inventory inventory;
 
     Sprite[] components;
     int[] componentsQuantities;
@@ -26,8 +24,10 @@ public class ProductionMenu : Menu
 
     System.Random random = new System.Random();
 
-    public void Display(BuildingProduction buildingProduction, BuildingUpgrade buildingUpgrade)
+    public override void Display(BuildingFeature buildingFeature, BuildingUpgrade buildingUpgrade)
     {
+        BuildingProduction buildingProduction = (BuildingProduction)buildingFeature;
+
         components = buildingProduction.components;
         componentsQuantities = buildingProduction.componentsQuantities;
         products = buildingProduction.products;
@@ -57,8 +57,8 @@ public class ProductionMenu : Menu
 
     public void OnProduceClick()
     {
-        if (!CanAffordTo()) { return; }
         componentsDisplayer.RefreshColor();
+        if (!CanAffordTo()) { return; }
 
         PayForProducts();
         GetProducts();
@@ -67,7 +67,7 @@ public class ProductionMenu : Menu
     bool CanAffordTo()
     {
         if ((float)energyCost > vitality.GetEnergy())
-            { return false; }
+            { return false; } // jesli brak energii mogłaby zapulsować ikona energii
 
         int i = 0;
         foreach (Sprite component in components)
@@ -114,7 +114,7 @@ public class ProductionMenu : Menu
         }
     }
 
-    public void ClearProduction()
+    public override void ClearProduction()
     {
         componentsDisplayer.DestroyIcons();
         productsDisplayer.DestroyIcons();

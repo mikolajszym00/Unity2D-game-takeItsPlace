@@ -29,7 +29,8 @@ public class UpgradeMenu : Menu
 
     public void DisplayMaxLevelReached()
     {
-        SetName("Max Level");
+        SetName("Maximum level reached");
+        SetBenefits(0, 0);
     }
 
     void SetBenefits(int success, int energyLoss)

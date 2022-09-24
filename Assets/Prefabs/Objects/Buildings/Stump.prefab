@@ -134,7 +134,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02402711, y: -0.18970944}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -145,7 +145,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1465585, y: 1.0327976}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &7234278699621685393
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1303d8970a4728840988aa8cca7a907d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingProduction: {fileID: 7928960781054819759}
+  buildingFeature: {fileID: 7928960781054819759}
 --- !u!114 &7928960781054819759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,12 +185,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6469374e86de0459c7db7f8172c355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingName: Stump
   components:
   - {fileID: -889301666, guid: f015eef69d5771c419b43ce3e00c76e5, type: 3}
   componentsQuantities: 01000000
   products:
   - {fileID: 537085555, guid: f015eef69d5771c419b43ce3e00c76e5, type: 3}
-  buildingName: Stump
   baseSuccess: 25
   baseEnergyCost: 20
 --- !u!1001 &1168527046823269358
