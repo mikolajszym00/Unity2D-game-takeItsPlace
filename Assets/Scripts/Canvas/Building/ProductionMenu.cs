@@ -2,9 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ProductionMenu : Menu
 {    
+    [SerializeField] HeroVitality vitality;
+
+    [SerializeField] GameObject successValue;
+    [SerializeField] GameObject energyCostValue;
+
     [SerializeField] ComponentsDisplayer componentsDisplayer;
     [SerializeField] ProductsDisplayer productsDisplayer;
     
@@ -14,22 +21,44 @@ public class ProductionMenu : Menu
     int[] componentsQuantities;
     Sprite[] products;
 
-    public void Display(String buildingName, Sprite[] _components, int[] _componentsQuantities, Sprite[] _products)
-    {
-        // buildingname = _buildingname;
-        components = _components;
-        componentsQuantities = _componentsQuantities;
-        products =_products;
+    int success;
+    int energyCost;
 
-        SetName(buildingName);
+    System.Random random = new System.Random();
+
+    public void Display(BuildingProduction buildingProduction, BuildingUpgrade buildingUpgrade)
+    {
+        components = buildingProduction.components;
+        componentsQuantities = buildingProduction.componentsQuantities;
+        products = buildingProduction.products;
+
+        SetName(buildingProduction.buildingName);
+
+        success = SetSuccess(buildingProduction.baseSuccess + buildingUpgrade.GetUpgradeSuccess());
+        energyCost = SetEnergyCost(buildingProduction.baseEnergyCost - buildingUpgrade.GetUpgradeEnergyLossDecrease());
 
         componentsDisplayer.SetComponents(components, componentsQuantities, inventory);
         productsDisplayer.SetProducts(products);
     }
 
+    int SetSuccess(int success)
+    {
+        successValue.GetComponent<TextMeshProUGUI>().text = "Success: " + success.ToString() + "%";
+        
+        return success;
+    }
+
+    int SetEnergyCost(int energyCost)
+    {
+        energyCostValue.GetComponent<TextMeshProUGUI>().text = "Energy: " + energyCost.ToString();
+
+        return energyCost;
+    }
+
     public void OnProduceClick()
     {
         if (!CanAffordTo()) { return; }
+        componentsDisplayer.RefreshColor();
 
         PayForProducts();
         GetProducts();
@@ -37,7 +66,8 @@ public class ProductionMenu : Menu
 
     bool CanAffordTo()
     {
-        // sprawdz czy ma energię
+        if ((float)energyCost > vitality.GetEnergy())
+            { return false; }
 
         int i = 0;
         foreach (Sprite component in components)
@@ -63,7 +93,7 @@ public class ProductionMenu : Menu
             i++;
         }
 
-        // odbierz energię
+        vitality.ChangeEnergy(-(float)energyCost);
     }
 
     void GetProducts()
@@ -71,7 +101,14 @@ public class ProductionMenu : Menu
         int i = 0;
         foreach (Sprite product in products)
         {
-            inventory.AddToInventory(product, 1); // dodać p-stwo niepowodzenia, zmienić kolory produktow (sukces, porażka)
+            if (random.Next(0,100) < success) 
+            {
+                inventory.AddToInventory(product, 1);
+                productsDisplayer.BlinkApprovedColor(true);
+            } else {
+                productsDisplayer.BlinkApprovedColor(false);
+            }
+            
 
             i++;
         }

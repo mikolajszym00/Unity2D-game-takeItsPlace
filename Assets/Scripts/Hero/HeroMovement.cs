@@ -11,34 +11,24 @@ public class HeroMovement : MonoBehaviour
 
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator anim;
-
-    [SerializeField] float energyCost = 0.003f;
-    [SerializeField] float atackEnergyCost = 10f;
-
-    [SerializeField] GameObject slider;
-    SliderControler energy;
+    [SerializeField] HeroVitality vitality;
 
     bool heroHasHorizontalSpeed;
     bool heroHasVerticalSpeed;
-
-    void Start()
-    {
-        energy = slider.GetComponent<EnergySliderController>();
-    }
 
     void Update()
     {
         Move();
         FilpSprite();
         AnimationHandler();
-        AtackEnergyCost();
+        vitality.AttackEnergyCost(anim.GetBool("isAtacking"));
     }
 
     void OnMove(InputValue value)
     {
         movementDirection = value.Get<Vector2>();
 
-        RunningEnergyCost();
+        vitality.RunningEnergyCost();
     }
 
     void Move() 
@@ -62,19 +52,6 @@ public class HeroMovement : MonoBehaviour
 
         bool isRunning = (heroHasHorizontalSpeed || heroHasVerticalSpeed) && (!anim.GetBool("isAtacking"));
         anim.SetBool("isRunning", isRunning);
-    }
-
-    void AtackEnergyCost()
-    {
-        if (anim.GetBool("isAtacking"))
-        {
-            energy.DecreaseValue(energyCost * atackEnergyCost);
-        }
-    }
-
-    void RunningEnergyCost() // bieganie i atak równoczeniśnie mogą zabierać więcej energii (**)
-    {
-        energy.DecreaseValue(energyCost);
     }
 
     public Vector2 GetMovementDirection()

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e1b5704dd4fb4b4f87129cbba6ff621, type: 3}
-  m_Name: Logs
+  m_Name: Box
   m_EditorClassIdentifier: 
   type: item
-  sprite: {fileID: 21300000, guid: 4e454169719f79b4a9588f56cd5ca3cc, type: 3}
-  prefabObj: {fileID: 315258945576123649, guid: 6eb57bd5ec74f9047abcdc2babe793ae, type: 3}
+  sprite: {fileID: -1609392886, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
+  prefabObj: {fileID: 315258945576123649, guid: be7a6699c1ff2ea44874a5285455d949, type: 3}
   giftPrice: 1
   prayPrice: 1
   iconSize: 0.7

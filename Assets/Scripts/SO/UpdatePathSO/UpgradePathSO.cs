@@ -28,12 +28,12 @@ public class UpgradePathSO : ScriptableObject
         return upgrades[index].GetSpritesQuantities();
     }
 
-    public int GetSuccessFromCurentLevel(int index)
+    public int GetSuccessFromLevel(int index)
     {
         return upgrades[index].GetSuccess();
     }
 
-    public int GetEnergyLossFromCurentLevel(int index)
+    public int GetEnergyLossFromLevel(int index)
     {
         return upgrades[index].GetEnergyLoss();
     }

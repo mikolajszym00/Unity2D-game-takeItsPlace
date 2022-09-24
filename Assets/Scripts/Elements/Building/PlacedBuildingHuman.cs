@@ -13,7 +13,7 @@ public class PlacedBuildingHuman : MonoBehaviour
     bool standByTheBui = false;
 
     GameObject buildingObj;
-    BuildingProduction buildingProduction;
+    // BuildingProduction buildingProduction;
 
     [SerializeField] UpgradeMenu upgradeMenu;
 
@@ -27,11 +27,7 @@ public class PlacedBuildingHuman : MonoBehaviour
 
         DeactivateOtherInputs();
 
-        buildingProduction = buildingObj.GetComponent<BuildingProduction>();
-        productionMenu.Display(buildingProduction.GetMyBuildingname(), 
-                               buildingProduction.GetMyComponents(), 
-                               buildingProduction.GetMyComponentsQuantities(),
-                               buildingProduction.GetMyProducts());
+        productionMenu.Display(buildingObj.GetComponent<BuildingProduction>(), buildingObj.GetComponent<BuildingUpgrade>());
 
         buiCanvas.SetActive(true);
     }

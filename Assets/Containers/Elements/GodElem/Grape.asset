@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e1b5704dd4fb4b4f87129cbba6ff621, type: 3}
-  m_Name: Logs
+  m_Name: Grape
   m_EditorClassIdentifier: 
   type: item
-  sprite: {fileID: 21300000, guid: 4e454169719f79b4a9588f56cd5ca3cc, type: 3}
-  prefabObj: {fileID: 315258945576123649, guid: 6eb57bd5ec74f9047abcdc2babe793ae, type: 3}
+  sprite: {fileID: -1454836246, guid: 55c538e86917a554ba978f3b14024d75, type: 3}
+  prefabObj: {fileID: 8590224369718350687, guid: 7d8f67054d53ae14981d0298668a3c3e, type: 3}
   giftPrice: 1
   prayPrice: 1
-  iconSize: 0.7
+  iconSize: 1

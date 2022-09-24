@@ -146,12 +146,12 @@ public class BuildingUpgrade : MonoBehaviour
             return;
         }
 
-        upgradeMenu.Display(buildingProduction.GetMyBuildingname(), 
+        upgradeMenu.Display(buildingProduction.buildingName, 
                             myUpgradePath.GetSpritesFromLevel(currLevel), 
                             myUpgradePath.GetSpritesQuantitiesFromLevel(currLevel),
                             spritesInCurrLevel,
-                            myUpgradePath.GetSuccessFromCurentLevel(currLevel), 
-                            myUpgradePath.GetEnergyLossFromCurentLevel(currLevel));
+                            myUpgradePath.GetSuccessFromLevel(currLevel), 
+                            myUpgradePath.GetEnergyLossFromLevel(currLevel));
     }
 
     public void SetElementsVisability(bool state)
@@ -160,5 +160,21 @@ public class BuildingUpgrade : MonoBehaviour
         {
             elem.transform.Find("Object Highlight").gameObject.GetComponent<Interaction>().SetCircleVisability(state);
         }
+    }
+
+    public int GetUpgradeSuccess()
+    {
+        if (currLevel == 0)
+        { return 0; }
+
+        return myUpgradePath.GetSuccessFromLevel(currLevel - 1); // przy najwiższym poziomie currLevel jest równy ilości upgradów
+    }
+
+    public int GetUpgradeEnergyLossDecrease()
+    {
+        if (currLevel == 0)
+        { return 0; }
+
+        return myUpgradePath.GetEnergyLossFromLevel(currLevel - 1); 
     }
 }

@@ -10,13 +10,24 @@ public class ProductsDisplayer : IconDisplayer
         foreach (Sprite sprite in sprites)
         {
             GameObject elemIcon = Instantiate(elemIconPrefab, transform);
+            elemIconList.Add(elemIcon);
+
             ElemIconHandler elemIconHandler = elemIcon.GetComponent<ElemIconHandler>();
 
             elemIconHandler.SetName(sprite);
             elemIconHandler.SetQuantity(1);
-            // dodać success
             
             i++; 
+        }
+    }
+
+    public void BlinkApprovedColor(bool state)
+    {
+        foreach (GameObject elemIcon in elemIconList)
+        {
+            ElemIconHandler elemIconHandler = elemIcon.GetComponent<ElemIconHandler>();
+
+            elemIconHandler.ApprovedColor(state); // trzeba dodać blinking
         }
     }
 }

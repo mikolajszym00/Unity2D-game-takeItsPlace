@@ -5,28 +5,12 @@ using UnityEngine;
 
 public class BuildingProduction : MonoBehaviour
 {
-    [SerializeField] Sprite[] component;
-    [SerializeField] int[] componentsQuantities;
-    [SerializeField] Sprite[] product;
-    [SerializeField] String buildingname;
+    [SerializeField] public Sprite[] components;
+    [SerializeField] public int[] componentsQuantities;
+    [SerializeField] public Sprite[] products;
 
-    public Sprite[] GetMyComponents()
-    {
-        return component;
-    }
+    [SerializeField] public String buildingName;
 
-    public int[] GetMyComponentsQuantities()
-    {
-        return componentsQuantities;
-    }
-
-    public Sprite[] GetMyProducts()
-    {
-        return product;
-    }
-
-    public String GetMyBuildingname()
-    {
-        return buildingname;
-    }
+    [SerializeField] public int baseSuccess;
+    [SerializeField] public int baseEnergyCost;
 }

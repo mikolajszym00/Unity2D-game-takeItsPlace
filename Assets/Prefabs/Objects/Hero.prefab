@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 6366590113010607206}
   - component: {fileID: 9209362108020770541}
   - component: {fileID: 617946794345819867}
+  - component: {fileID: 5645514420670768783}
   - component: {fileID: 2650261878730221823}
   - component: {fileID: 7484182409700617254}
   - component: {fileID: 6458175865078181658}
@@ -253,9 +254,7 @@ MonoBehaviour:
   movementDirection: {x: 0, y: 0}
   rb: {fileID: 7484182409700617254}
   anim: {fileID: 6263620221357738271}
-  energyCost: 0.003
-  atackEnergyCost: 10
-  slider: {fileID: 0}
+  vitality: {fileID: 0}
 --- !u!114 &9209362108020770541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +284,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7484182409700617254}
+--- !u!114 &5645514420670768783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6366590113010607203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21430fc31b41764d99e0384b5815781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy: {fileID: 0}
+  health: {fileID: 0}
+  energyCost: 0.003
+  attackEnergyCost: 10
 --- !u!114 &2650261878730221823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650afedc440376f46bf735c33d50301f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handAction: {fileID: 0}
 --- !u!50 &7484182409700617254
 Rigidbody2D:
   serializedVersion: 4
