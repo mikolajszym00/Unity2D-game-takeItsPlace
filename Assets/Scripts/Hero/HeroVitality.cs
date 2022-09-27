@@ -8,7 +8,7 @@ public class HeroVitality : MonoBehaviour
     [SerializeField] HealthSliderDisplayer health;
 
     [SerializeField] float energyCost = 0.003f;
-    [SerializeField] float attackEnergyCost = 10f;
+    [SerializeField] float attackEnergyCost = 4f;
 
     public void ChangeEnergy(float diff)
     {
@@ -35,7 +35,7 @@ public class HeroVitality : MonoBehaviour
         if (!isAttacking)
             { return; }
 
-        energy.ChangeValue(-energyCost * attackEnergyCost);
+        energy.ChangeValue(-Time.deltaTime * attackEnergyCost);
         
     }
 

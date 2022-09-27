@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de0669f4835b49459d935ef1481f1fe, type: 3}
+  m_Name: upgradePathStoneCutter
+  m_EditorClassIdentifier: 
+  upgrades:
+  - {fileID: 11400000, guid: 126b541a95a190641b4a6e0126c0af91, type: 2}
+  - {fileID: 11400000, guid: 537bc080a30bbfb4ab8faa790f29332a, type: 2}
+  - {fileID: 11400000, guid: 1e9c7c5bdaabcff438f82161aa6f18b4, type: 2}

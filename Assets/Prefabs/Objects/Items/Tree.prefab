@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1413397187
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -187423546, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,7 +98,7 @@ SortingGroup:
   m_GameObject: {fileID: 315258945576123649}
   m_Enabled: 1
   m_SortingLayerID: -1199962231
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
 --- !u!114 &3862739156433520239
 MonoBehaviour:
@@ -162,41 +162,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6651767706983871334}
     m_Modifications:
-    - target: {fileID: 2953329847073229416, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4047817220400907284, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
       propertyPath: m_Name
       value: Object Highlight
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047817220400907284, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4992214923611374482, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7332156375658942773, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
-      propertyPath: m_Color.a
-      value: 0.27058825
-      objectReference: {fileID: 0}
-    - target: {fileID: 7332156375658942773, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
-      propertyPath: m_Color.b
-      value: 0.12246352
-      objectReference: {fileID: 0}
-    - target: {fileID: 7332156375658942773, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
-      propertyPath: m_Color.g
-      value: 0.6037736
-      objectReference: {fileID: 0}
-    - target: {fileID: 7332156375658942773, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
-      propertyPath: m_Color.r
-      value: 0.29626995
-      objectReference: {fileID: 0}
-    - target: {fileID: 7332156375658942773, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8288488295518421102, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
       propertyPath: m_RootOrder

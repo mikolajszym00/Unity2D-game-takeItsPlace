@@ -21,7 +21,6 @@ public class HeroMovement : MonoBehaviour
         Move();
         FilpSprite();
         AnimationHandler();
-        vitality.AttackEnergyCost(anim.GetBool("isAtacking"));
     }
 
     void OnMove(InputValue value)

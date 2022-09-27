@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ground
   m_EditorClassIdentifier: 
   type: tile
-  sprite: {fileID: 21300000, guid: 006a830863a8f2f45bf036c8303e6c08, type: 3}
+  sprite: {fileID: 1452586420, guid: 86af6f4210cc7864d96ade5c683f293d, type: 3}
   prefabObj: {fileID: 7763934667690456128, guid: 863600cf544ebba4da8f7cc54d7fd6f9, type: 3}
   giftPrice: 1
   prayPrice: 1

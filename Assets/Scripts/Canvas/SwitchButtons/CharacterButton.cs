@@ -16,11 +16,16 @@ public class CharacterButton : MonoBehaviour
     [SerializeField] GameObject god;
     [SerializeField] GameObject human;
 
+    [SerializeField] GameObject campfireBG;
+    SpriteRenderer campfireBGSpriteRenderer;
+
     void Start()
     {
         god.GetComponent<Button>().interactable = false;
 
         heroActivation.ActivateInteraction(false);
+
+        campfireBGSpriteRenderer = campfireBG.GetComponent<SpriteRenderer>();
     }
 
     public void OnButtonSelected(int index) 
@@ -37,6 +42,9 @@ public class CharacterButton : MonoBehaviour
 
             closeBuildier.OnButtonClose();
             closeInventory.OnButtonClose();
+
+            campfireBGSpriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask; // dość tymczasowe, na potrzeby filmu
+            campfireBG.transform.Find("Circle").gameObject.SetActive(true);
         }
         else
         {
@@ -47,8 +55,10 @@ public class CharacterButton : MonoBehaviour
             god.GetComponent<Button>().interactable = true;
 
             heroActivation.ActivateInteraction(true);
+
+            campfireBGSpriteRenderer.maskInteraction = SpriteMaskInteraction.None;
+            campfireBG.transform.Find("Circle").gameObject.SetActive(false);
+
         }
-
-
     }
 }

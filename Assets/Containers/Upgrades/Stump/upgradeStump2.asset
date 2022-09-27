@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: upgradeStump2
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -1609392886, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
-  spritesQuantities: 01000000
+  - {fileID: 21300000, guid: 4e454169719f79b4a9588f56cd5ca3cc, type: 3}
+  spritesQuantities: 02000000
   energyLossDecrease: 2
   success: 0

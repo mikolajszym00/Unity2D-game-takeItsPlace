@@ -35,6 +35,8 @@ public class PlacedBuildingGod : MonoBehaviour
     public void CheckUpgrades(Vector3 mousePos, Sprite sprite, GameObject elem)
     // wywołuje się, gdy gracz postawi element
     {
+        if (elem.tag == "CoveredTile") { return; }
+
         foreach (Transform building in transform)
         {
             if (building.Find("Object Upgrade Area").gameObject.GetComponent<CircleCollider2D>().bounds.Contains(mousePos)) // czy ma być w tym tile

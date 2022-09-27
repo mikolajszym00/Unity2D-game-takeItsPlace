@@ -8,7 +8,7 @@ public class GridManager : ElementManager
     [SerializeField] Tile tilePrefab;
     [SerializeField] Sprite mySprite;
 
-    [SerializeField] GameObject hero;
+    [SerializeField] GameObject campfire;
 
     Transform coveredParent;
     Transform baredParent;
@@ -18,20 +18,33 @@ public class GridManager : ElementManager
         coveredParent = transform.Find("Covered");
         baredParent = transform.Find("Bared");
 
-        CreateStartingTile();
+        CreateStartingTiles();
     }
 
-    void CreateStartingTile()
+    void CreateStartingTiles()
     {
-        Vector2 heroPos = hero.transform.position;
-        int x = Mathf.FloorToInt(heroPos.x);
-        int y = Mathf.FloorToInt(heroPos.y);
+        Vector2 campfirePos = campfire.transform.position;
+        int x = Mathf.FloorToInt(campfirePos.x);
+        int y = Mathf.FloorToInt(campfirePos.y);
 
-        Tile tile = Instantiate(tilePrefab, new Vector3 (x, y), Quaternion.identity, coveredParent);
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                Tile tile = Instantiate(tilePrefab, new Vector3 (x + i, y + j), Quaternion.identity, coveredParent);
 
-        tile.SetCovered(mySprite, false);
+                tile.SetCovered(mySprite, false);
+            }
+        }
 
-        CreateBareTiles(x, y);
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                CreateBareTiles(x + i, y + j);
+            }
+        }
+
         BaredTileDeactivateHighlight();
     }
 

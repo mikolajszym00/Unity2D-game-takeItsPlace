@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: add3b8187d7787d4f84512488f391806, type: 3}
-  m_Name: upgradeStump1
+  m_Name: upgradeStump3
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 1623783896, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
   - {fileID: -187423546, guid: 6f5f82b940a45bb469d4a028dcc1c907, type: 3}
-  spritesQuantities: 0100000001000000
-  energyLossDecrease: 1
-  success: 2
+  spritesQuantities: 03000000
+  energyLossDecrease: 2
+  success: 10

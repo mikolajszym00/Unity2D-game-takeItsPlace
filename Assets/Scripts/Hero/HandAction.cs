@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class HandAction : MonoBehaviour
 {
+    [SerializeField] HeroVitality vitality;
+
     Animator anim;
 
     float actKeyIsPushed;
@@ -16,7 +18,7 @@ public class HandAction : MonoBehaviour
 
     void Update()
     {
-
+        vitality.AttackEnergyCost(anim.GetBool("isAtacking"));
     }
 
     void OnAction(InputValue value)

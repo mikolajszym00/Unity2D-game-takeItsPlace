@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6288650295490383373}
   - component: {fileID: 6288650295490383378}
   - component: {fileID: 5784176509755601272}
+  - component: {fileID: 4618909847688374995}
   - component: {fileID: 5502064351558435423}
   - component: {fileID: 7234278699621685393}
   - component: {fileID: 598374459721858550}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -967950197
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 15072df1de235d845bd122d8dda26b46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -121,6 +122,17 @@ PolygonCollider2D:
       - {x: -0.28160095, y: -0.49462128}
       - {x: 0.34114075, y: -0.4962101}
       - {x: 0.3043747, y: 0.13949108}
+--- !u!210 &4618909847688374995
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6288650295490383372}
+  m_Enabled: 1
+  m_SortingLayerID: -1199962231
+  m_SortingLayer: 3
+  m_SortingOrder: 0
 --- !u!61 &5502064351558435423
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -173,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingFeature: {fileID: 7928960781054819759}
+  myUpgradePath: {fileID: 0}
 --- !u!114 &7928960781054819759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +302,22 @@ PrefabInstance:
     - target: {fileID: 4992214923611374482, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332156375658942773, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332156375658942773, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
+      propertyPath: m_Color.b
+      value: 0.062077243
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332156375658942773, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
+      propertyPath: m_Color.g
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332156375658942773, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8773585
       objectReference: {fileID: 0}
     - target: {fileID: 7332156375658942773, guid: 9793f4374c28bdd4680f4b42d6148850, type: 3}
       propertyPath: m_Enabled

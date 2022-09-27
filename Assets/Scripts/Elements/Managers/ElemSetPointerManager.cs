@@ -60,7 +60,7 @@ public abstract class ElemSetPointerManager : ElementManager
     protected bool MouseClickCorrectness(Vector3 mousePos) 
     {
         if (!(setPointer.GetComponent<SetPointerCD>().CanBePlaced() 
-        // && gridManager.GetComponent<GridManager>().IsPositionOnCoveredTiles(GetMousePos()) // debug mode
+        && gridManager.GetComponent<GridManager>().IsPositionOnCoveredTiles(GetMousePos()) // debug mode
               )) 
             { 
                 return false; 

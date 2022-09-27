@@ -7,7 +7,7 @@ public class BuildingUpgrade : MonoBehaviour
 {
     [SerializeField] BuildingFeature buildingFeature;
 
-    UpgradePathSO myUpgradePath;
+    [SerializeField] UpgradePathSO myUpgradePath;
     (int, int) pathSize;
 
     int currLevel = 0;

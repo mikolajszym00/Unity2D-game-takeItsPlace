@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a8cdd6fbf403e4bb66d0d9b63814f3, type: 3}
   m_Name: Stonecutter
   m_EditorClassIdentifier: 
-  godPrice: 0
-  humanPrice: 0
-  mySprite: {fileID: 21300000, guid: 0af4cb6257decdc44b6380585235ae0d, type: 3}
-  prefabObj: {fileID: 4081497379279082160, guid: 6ce6b6102539eff419b6295aad779592, type: 3}
   type: building
-  objectBoundariesRadius: 2.3
+  sprite: {fileID: 1158988357, guid: a5accce337637884b94bdb06e2b5b2fb, type: 3}
+  prefabObj: {fileID: 4081497379279082160, guid: 6ce6b6102539eff419b6295aad779592, type: 3}
   upgradePath: {fileID: 11400000, guid: a77623eafa508924f902e77c5f7e2d6c, type: 2}

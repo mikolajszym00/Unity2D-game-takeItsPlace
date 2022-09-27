@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -524.74164}
+  m_AnchoredPosition: {x: 0, y: -76.82058}
   m_SizeDelta: {x: 125, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5800628651923414584
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elemIconPrefab: {fileID: 652879859469488997, guid: 32d30c4b0e439884e9840d2ca85fda40, type: 3}
+  elemIconList: []
 --- !u!1 &3603321558733773962
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -524.7418}
+  m_AnchoredPosition: {x: 0, y: -76.82058}
   m_SizeDelta: {x: 250, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5097089841853146469
@@ -198,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elemIconPrefab: {fileID: 652879859469488997, guid: 32d30c4b0e439884e9840d2ca85fda40, type: 3}
+  elemIconList: []
 --- !u!1 &4850780476575132390
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,11 +696,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ede624c4a8b9a45af6e4b34d17a520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  vitality: {fileID: 0}
   successValue: {fileID: 8692016095965943531}
   energyCostValue: {fileID: 7055931651306009006}
   componentsDisplayer: {fileID: 3211358539024600260}
   productsDisplayer: {fileID: 2021154778105746557}
-  inventory: {fileID: 0}
 --- !u!1 &5687455946304884503
 GameObject:
   m_ObjectHideFlags: 0
